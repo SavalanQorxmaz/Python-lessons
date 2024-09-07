@@ -92,11 +92,11 @@ print(f'Before: {a=} {b=}')
 a, b = b, a
 print(f'After: {a=} {b=}')
 
-
-pi = 3.1415
-gravity = 9.8
-oil = 82.12
-date = time.ctime()
+# Constants
+PI = 3.1415
+GRAVITY = 9.8
+OIL_PRICE = 82.12
+CURRENT_DATE = time.ctime()
 
 # - Math -
 # A
