@@ -1,3 +1,5 @@
+from math import pi
+
 # - Dictionaries -
 
 personal_data = {   # A
@@ -127,7 +129,7 @@ word_definitions = {        # V
 selected = input('Selected item: ')
 while selected not in word_definitions:
     print('No student as this name')
-    selected = input('Selected student: ')
+    selected = input('Selected item: ')
 length = len(word_definitions[selected])
 print(f'Selected item length is: {length}')
 
@@ -144,3 +146,146 @@ student_scores.update({'David': 88})    # B
 print(student_scores)
 student_scores['Eve'] = 82  # C
 student_scores.pop('Bob')   # D
+
+my_dict = {'name': 'Alice', 'age': 30, 'city': 'New York'}  # E
+key = input('Enter key: ')
+if key not in my_dict.keys():
+    print('Not found')
+else:
+    print(f'{key} is {my_dict[key]}')
+
+new_dict = {}
+key  = input('Enter key: ')
+value = input('Enter value: ')
+new_dict.update({key: value})
+print(new_dict)
+
+# - I/O -
+print('Rectangle perimeter')    # A
+side1 = int(input('Side 1: '))
+side2 = int(input('Side 2: '))
+perimeter = (side1 + side2) * 2
+print(f'perimeter is: {perimeter}')
+print('Rectangle area')    # B
+side1 = int(input('Side 1: '))
+side2 = int(input('Side 2: '))
+area = side1 * side2
+print(f'Area is: {area}')
+print('Square perimeter')    # C
+side = int(input('Side: '))
+perimeter = side * 4
+print(f'Area is: {perimeter}')
+print('Square area')    # D
+side = int(input('Side: '))
+area = side**2
+print(f'Area is: {area}')
+print('Circle area')    # E
+radius = int(input('Radius: '))
+area = pi * radius**2
+print(f'Circle area is: {area}')
+print('Circle perimeter')    # F
+radius = int(input('Radius: '))
+length = 2 * pi * radius
+print(f'Circle length is: {length}')
+
+# Quiz.
+'''
+1. What is a dictionary in Python?
+    b) A collection of key-value pairs
+
+2. How do you create an empty dictionary in Python?
+    a) my_dict = {}
+    b) my_dict = dict()
+
+3. How do you access a value in a dictionary using its key?
+    a) my_dict.get(key)
+    b) my_dict[key]
+    
+4. Can a dictionary have duplicate keys?
+    b) No
+    
+5. How do you add a new key-value pair to an existing dictionary?
+    b) my_dict[key] = value
+    
+6. How do you remove a key-value pair from a dictionary?
+    c) del my_dict[key]
+    d) my_dict.pop(key)
+    
+7. Which method returns a list of all the keys in a dictionary?
+    a) my_dict.keys()
+
+8. How do you check if a key is in a dictionary?
+    a) key in my_dict
+
+9. What happens if you try to access a key in a dictionary that doesn't exist?
+    a) It raises a KeyError
+
+10. Which dictionary method is used to retrieve the value associated with a key, 
+and if the key does not exist, return a default value instead of raising an error?
+    a) get(key, default)
+
+11. Which dictionary method is used to remove all key-value pairs from the dictionary?
+    a) clear()
+
+12. Which dictionary method returns a new dictionary with keys from the given sequence and 
+values set to a specified value?
+    a) fromkeys(seq, value)
+
+13. Which dictionary method returns a list of tuples, each tuple containing a key-value pair 
+from the dictionary?
+    a) items()
+
+14. Which dictionary method returns a list of all the values in the dictionary?
+    a) values()
+
+15. Which dictionary method returns and removes an element with a specified key?
+    a) pop(key)
+    
+16. Which dictionary method returns a shallow copy of the dictionary?
+    a) copy() ?????????????????
+
+17. Which dictionary method is used to update the dictionary with key-value pairs 
+from another dictionary or from an iterable of key-value pairs?
+    a) update(iterable)
+
+18. Which dictionary method returns the value for a specified key and removes the 
+key-value pair from the dictionary?
+    a) popitem()
+    
+19. What will be the output of this code:
+    my_dict = {'a': 1, 'b': 2, 'c': 3}
+    print(my_dict.get('b'))
+
+    b) 2
+        
+20. What will be the output of this code:
+    my_dict = {'a': 1, 'b': 2, 'c': 3}
+    my_dict['d'] = 4
+    print(my_dict)
+    
+    b) {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+    
+21. What will be the output of this code:
+    my_dict = {'a': 1, 'b': 2, 'c': 3}
+    my_dict.pop('b')
+    print(my_dict)
+
+    a) {'a': 1, 'c': 3}
+
+22. What will be the output of this code:
+    my_dict = {'a': 1, 'b': 2, 'c': 3}
+    print(list(my_dict.items()))
+
+    a) [('a', 1), ('b', 2), ('c', 3)]
+    
+23. What will be the output of this code:
+    my_dict = {'a': 1, 'b': 2, 'c': 3}
+    my_dict.update({'b': 5, 'd': 4})
+    print(my_dict)
+
+    b) {'a': 1, 'b': 5, 'c': 3, 'd': 4}
+
+24. What is the main difference between the pop() and popitem() methods in Python dictionaries?
+    a) pop() allows you to remove a specific key-value pair by providing the key, while popitem() 
+    removes and returns an arbitrary key-value pair. before 3.7
+'''
