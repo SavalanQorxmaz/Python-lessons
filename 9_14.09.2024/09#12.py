@@ -4,8 +4,9 @@
 # If appropriate, comment your code to explain each step.
 
 # - If Statements -
-# A. Create any variable with Boolean value. Print 'My variable evaluates to True'
-# if this variable is 'True', otherwise print 'My variable evaluates to False'.
+
+'''A. Create any variable with Boolean value. Print 'My variable evaluates to True'
+if this variable is 'True', otherwise print 'My variable evaluates to False'.'''
 
 is_true = True
 if is_true:
@@ -13,11 +14,11 @@ if is_true:
 else:
     print('My variable evaluates to False')
 
-# B. Create a variable named 'temperature'. Make it equal to any degree. Check:
-# 1. If temperature is under 10 degrees, print 'It\'s cold outside, take a scarf.'.
-# 2. If temperature is in interval from 10 to 24 degrees (both included), print 
-# 'It\'s a nice weather. Let\'s go for a walk.'.
-# 3. If temperature is above 24 degrees, print 'It\'s quite hot, I need an AC.'.
+'''B. Create a variable named 'temperature'. Make it equal to any degree. Check:
+1. If temperature is under 10 degrees, print 'It\'s cold outside, take a scarf.'.
+2. If temperature is in interval from 10 to 24 degrees (both included), print 
+'It\'s a nice weather. Let\'s go for a walk.'.
+3. If temperature is above 24 degrees, print 'It\'s quite hot, I need an AC.'.'''
 
 temperature = 25
 if temperature < 10:
@@ -27,9 +28,9 @@ elif 10 <= temperature <= 24:
 else:
     print('It\'s quite hot, I need an AC.')
 
-# C. Create a variable named 'age'. Make it equal your age. Check:
-# 1. If it's under 18, print 'I am not eligible for voting :('
-# 2.If you are 18 or older, print 'I am eligible for voting!'
+'''C. Create a variable named 'age'. Make it equal your age. Check:
+1. If it's under 18, print 'I am not eligible for voting :('
+2.If you are 18 or older, print 'I am eligible for voting!'''
 
 age = 35
 if age < 18:
@@ -37,9 +38,9 @@ if age < 18:
 else:
     print('I am eligible for voting!')
 
-# D. Create variables 'a' and 'b'. Make them equal 15 and 20 correspondingly.
-# Check if their sum gives less than 40, print their sum and add 'It\'s less than 40.'.
-# Otherwise, print their sum and add 'It makes 40 or more than 40.'.
+'''D. Create variables 'a' and 'b'. Make them equal 15 and 20 correspondingly.
+Check if their sum gives less than 40, print their sum and add 'It\'s less than 40.'.
+Otherwise, print their sum and add 'It makes 40 or more than 40.'.'''
 
 a, b = 15, 20
 sum = a + b
@@ -47,30 +48,120 @@ if sum < 40:
     print(f'Sum: {sum} It\'s less than 40.')
 else:
     print(f'Sum: {sum} It makes 40 or more than 40.')
-# E. Create a list with 4 students (make it contain their names). Check if the 
-# length of that list is less than 5, add new student to that list.
+
+'''E. Create a list with 4 students (make it contain their names). Check if the 
+length of that list is less than 5, add new student to that list.'''
 
 students = ['Lale', 'Leyla', 'Ali', 'Murad']
 if len(students) < 5:
     students.append('Senan')
-# F. Create four variables (a, b, c, d) with numeric (int & float) values.
-# Write the logical expression to check if 'a' is greater than 'b' and 'c' is greater
-# than 'd'.
+
+'''F. Create four variables (a, b, c, d) with numeric (int & float) values.
+Write the logical expression to check if 'a' is greater than 'b' and 'c' is greater
+than 'd'.'''
 
 a, b, c, d = (3, 5.8, -23, 96)
 if(a > b) and (c > d):
     print(True)
 else:
     print(False)
-# G. Write a program to check whether a number accepted from user is divisible by 2
-# and 3 both.
-# H. Write a program that finds the largest number out of three numbers accepted from user.
-# I. Write a program that gets any input from user. It should print 'Lower job!' if all
-# characters in user's input are lowercase, otherwise print 'Upper job!'.
-# J. Write a program to check whether a number entered by user is three digit number or not.
-# K. Accept the temperature in degree Celcius of water and check whether it's boiling or
-# not (boiling point of water is 100 degree Celcius).
-# L. Accept the IQ of 3 people and display the highest one.
+
+'''G. Write a program to check whether a number accepted from user is divisible by 2
+and 3 both.
+'''
+# print('divisible by 2 and 3')
+# user_input = input('Number: ')
+# number = 0
+# is_allright = False
+# while not is_allright:  # Check if input is number
+#     try:
+#         if int(user_input):
+#             number = int(user_input)
+#             is_allright = True
+
+#     except ValueError:
+#         print('Only number!')
+#         user_input = input('Number: ')
+#         pass
+# print(number)
+# if(number % 6 == 0):    # Method 1
+#     print(f'{number} divide 2 and 3')
+# else:
+#     print(f'{number} does not divide 2 and 3')
+# if(number % 2 == 0 and number % 3 == 0):    # Method 2
+#     print(f'{number} divide 2 and 3')
+# else:
+#     print(f'{number} doesn\'t divide 2 and 3')
+
+'''H. Write a program that finds the largest number out of three numbers accepted from user.
+'''
+# print('Largest number find')
+# numbers = []
+# length = len(numbers) 
+# print('Add  3 numbers, click Enter after every number')
+# while len(numbers) < 3:
+#     user_input = input('Enter number: ')
+#     try:
+#         if int(user_input):
+#             numbers.append(int(user_input))
+#             pass
+#     except ValueError:
+#         print('Only number!')
+#         pass
+    
+# print(numbers)
+# numbers.sort()
+# print(f'Largest is: {numbers[-1]}')
+
+'''I. Write a program that gets any input from user. It should print 'Lower job!' if all
+characters in user's input are lowercase, otherwise print 'Upper job!'.
+'''
+# user_input = input('Any word or sentence: ')
+# if user_input.islower():
+#     print('Lower job!')
+# else:
+#     print('Upper job!')
+
+'''J. Write a program to check whether a number entered by user is three digit number or not.
+'''
+# print('Number three digit or')
+# user_input = input('Number: ')
+# number = None
+# while number is None:  
+#     try:
+#         if int(user_input):
+#             number = int(user_input)
+
+#     except ValueError:
+#         print('Only number!')
+#         user_input = input('Number: ')
+#         pass
+#     div_number = number // 100
+# if 0 < div_number < 10:
+#     print(f'{number} is three digit number')
+# else:
+#     print(f'{number} is not three digit number')
+
+'''K. Accept the temperature in degree Celcius of water and check whether it's boiling or
+not (boiling point of water is 100 degree Celcius).
+'''
+# temperature = None
+# user_input = input('Enter temperture: ')
+# try:
+#     if int(user_input):
+#         temperature = int(user_input)
+#         if(temperature > 100):
+#              print('it\'s boiling')
+#         else:
+#              print('it\'s not boiling')
+# except ValueError:
+#     print('It is not temperature')
+#     pass
+
+'''L. Accept the IQ of 3 people and display the highest one.
+'''
+
+
 # M. Write a program to check whether a character accepted from user is vowel or not.
 # N. Accept the following from the user and calculate the percentage of class attendance:
 # 1. Total number of class days
