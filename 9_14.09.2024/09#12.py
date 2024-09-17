@@ -1,4 +1,4 @@
-
+import pyautogui as pgui
 # Instructions: Write Python code for each of the following tasks. 
 # Make sure to use if statements appropriately to achieve the desired outcomes. 
 # If appropriate, comment your code to explain each step.
@@ -160,199 +160,522 @@ not (boiling point of water is 100 degree Celcius).
 
 '''L. Accept the IQ of 3 people and display the highest one.
 '''
+# print('IQ of 3 people and display the highest one')
+# persons = {
+#     'Lale': 0,
+#     'Leyla': 0,
+#     'Leman': 0
+#     }
+# for x in persons:
+#     print(f'{x}:', end='   ')
+#     persons.update({x: input()})
+# print(persons)
+# values_list = list(persons.values())
+# values_list.sort()
+# print(values_list)
+# for person in persons:
+#     if persons[person] == values_list[-1]:
+#         print(f'{person} {persons[person]} IQ highest')
+#         break
+
+'''M. Write a program to check whether a character accepted from user is vowel or not.
+'''
+# print('Character accepted from user is vowel or not')
+# vowel_chars = ('a', 'e', 'i', 'o', 'u')
+# value = input('character: ')
+# if value.strip()[-1] in vowel_chars:
+#     print(True)
+# else:
+#     print(False)
 
 
-# M. Write a program to check whether a character accepted from user is vowel or not.
-# N. Accept the following from the user and calculate the percentage of class attendance:
-# 1. Total number of class days
-# 2. Total number of days for absence
-# O. Accept the percentage from the user and display the grade according to the following
-# criterias:
-# 1. Below 25 - D
-# 2. 25 to 45 - C
-# 3. 45 to 50 - B
-# 4. 50 to 60 - B+
-# 5. 60 to 80 - A
-# 6. Above 80 - A+
+'''N. Accept the following from the user and calculate the percentage of class attendance:
+1. Total number of class days
+2. Total number of days for absence
+'''
+
+# class_dict = {
+#     'class_days': 0,
+#     'absence': 0
+#     }
+# for x in class_dict.keys():
+    
+#     is_int = False
+#     while is_int == False:
+#         print(f'{x}:', end='   ')
+#         try:
+#             days = int(input())
+#             class_dict.update({x: days})
+#             is_int = True
+#         except ValueError:
+#             print('Only Number')
+#             pass
+# attendance_percentage = 100 / class_dict['class_days'] * (class_dict['class_days'] - class_dict['absence'])
+# print(f'percentage of class attendance: {attendance_percentage:.1f} %')
+
+
+'''O. Accept the percentage from the user and display the grade according to the following
+criterias:
+1. Below 25 - D
+2. 25 to 45 - C
+3. 45 to 50 - B
+4. 50 to 60 - B+
+5. 60 to 80 - A
+6. Above 80 - A+
+'''
+
+
 
 # - Dictionary Methods -
-# A. Create a nested dictionary. Get any inner value using multiple key-indexing.
-# B. Create a dictionary with your personal data (name, surname, age, family status,
-# gender). Ask user for any key in your dictionary. Print the value of the given
-# key from the dictionary. Try to ask all keys.
-# C. Create a dictionary with stock data of clothes (cloth name + amount). Let 
-# the user choose any of keys and add some count to it.
-# D. Copy any dictionary from previous tasks. Print it.
-# E. Clear the dictionary from Task D. Print the length of this dictionary.
-# F. Create an empty dictionary. Let the user add data to it (key & value). Choose
-# any topic (books, cars, info, items, grades...) and let the user fill it with
-# minimum 4 key-value pairs.
-# G. You have the following dictionary:
-# car = {
-#     "brand": "Chevrolet",
-#     "model": "Camaro",
-#     "year": 2017
-# }
+'''A. Create a nested dictionary. Get any inner value using multiple key-indexing.
+'''
+print('Nested dictionary')
+my_dict = {
+    'city': 'baku',
+    'language': 'AZ',
+    'car': {
+        'model': 'audi',
+        'country':'Germany',
+        'year': 2024,
+        'e-tron': True
+    },
+    
+}
+country = my_dict['car']['country']
+print(country)
 
-# Create a 'not_found_message' variable. Make it equal appropriate "not found" message.
-# Try to get 'year's and 'color's values from the 'car'. Set the default value to 
-# our "not found" message.
-# H. Print the first 6 keys from the following dictionary (hint: you should use 
-# 'list()' method to convert dict_keys to list and indexing to get the appropriate
-# portion of data):
-# countries_capitals = {
-#     "USA": "Washington, D.C.",
-#     "Canada": "Ottawa",
-#     "United Kingdom": "London",
-#     "France": "Paris",
-#     "Germany": "Berlin",
-#     "Japan": "Tokyo",
-#     "Australia": "Canberra",
-#     "Brazil": "Brasília",
-#     "India": "New Delhi",
-#     "South Africa": "Pretoria",
+'''B. Create a dictionary with your personal data (name, surname, age, family status,
+gender). Ask user for any key in your dictionary. Print the value of the given
+key from the dictionary. Try to ask all keys.
+'''
+# person = {
+#     'name': 'Savalan',
+#     'surname': 'Qorxmaz',
+#     'age': 35,
+#     'family_status': 'single'
 # }
-# I. You have the following dictionary:
-# programming_languages = {
-#     "Python": {
-#         "designed_by": "Guido van Rossum",
-#         "first_appeared": 1991,
-#         "paradigm": "Multi-paradigm",
-#         "typing": "Dynamic",
-#         "popularity": "High"
-#     },
-#     "JavaScript": {
-#         "designed_by": "Brendan Eich",
-#         "first_appeared": 1995,
-#         "paradigm": "Multi-paradigm",
-#         "typing": "Dynamic",
-#         "popularity": "Very High"
-#     },
-#     "Java": {
-#         "designed_by": "James Gosling",
-#         "first_appeared": 1995,
-#         "paradigm": "Object-oriented",
-#         "typing": "Static",
-#         "popularity": "High"
-#     },
-#     "C++": {
-#         "designed_by": "Bjarne Stroustrup",
-#         "first_appeared": 1985,
-#         "paradigm": "Multi-paradigm",
-#         "typing": "Static",
-#         "popularity": "Moderate"
-#     }
-# }
+# *rest, b = tuple(person.keys())
+# print(f'Enter {', '.join(rest)} or {b}')
+# user_input = input('key: ')
+# if user_input in person.keys():
+#     print(person[user_input])
+# else:
+#     print('There are no key')
 
-# Using in f-strings print the year Python was appeared value.
-# J. You have the following code snippet:
-# tasks = {
-#     "Alice": ["Buy groceries", "Finish report", "Call the doctor"],
-#     "Bob": ["Walk the dog", "Pay bills", "Read a chapter"]
-# }
+'''C. Create a dictionary with stock data of clothes (cloth name + amount). Let 
+the user choose any of keys and add some count to it.
+'''
+print('data of clothes')
+clothes = {
+    'shoes': 100,
+    'jacket': 80,
+    'shirt': 50
+}
+# new_clothe = input('Add new one')
+# clothes.update({new_clothe: 200})
+# print(clothes)
 
-# selected_person = "Alice"
-# new_task = "Go to the gym"
+'''D. Copy any dictionary from previous tasks. Print it.
+'''
+print('Copy dictionary')
+clothes2 = clothes.copy()
+print(clothes2)
 
-# Add the new task to the selected person's tasks. Print the tasks & length of tasks 
-# before and after edition.
-# K. There is a dictionary method that helps to create a dictionary with a collection
-# of keys and apply a default value to that key. Using that method create a dictionary
-# with all values equal to the '[0, 4, 8, 12, 16, 20]' list and keys should only be
-# the numbers from 0 to 4, so your dictionary should look like:
-# digits = [1, 2, 3, 4, 5]
+'''E. Clear the dictionary from Task D. Print the length of this dictionary.
+'''
+clothes2.clear()
+print(clothes2)
 
-# my_dict = {
-#     0: [0, 4, 8, 12, 16, 20],
-#     1: [0, 4, 8, 12, 16, 20],
-#     2: [0, 4, 8, 12, 16, 20],
-#     3: [0, 4, 8, 12, 16, 20],
-#     4: [0, 4, 8, 12, 16, 20],
-# }
+'''F. Create an empty dictionary. Let the user add data to it (key & value). Choose
+any topic (books, cars, info, items, grades...) and let the user fill it with
+minimum 4 key-value pairs.
+'''
+print('user add data to dictionary (key & value).')
+# new_dict = {}
+# stop = ''
+# while stop != 'stop':
+#     key = input('Add key: ')
+#     value = input('Add value: ')
+#     stop =  input('If yo want to cancel, write stop, else what you want): ')
+#     new_dict.update({key: value})
+# print(new_dict)
 
-# You should use list comprehension in this task.
+'''G. You have the following dictionary:
+car = {
+    "brand": "Chevrolet",
+    "model": "Camaro",
+    "year": 2017
+}
 
-# Then you should print some portion from the list values of a dictionary. The
-# portion size depends on a key you are using to index the list.
-# L. Print all items, values, keys from 'programming_languages' dictionary.
-# M. Remove 'Java' from 'programming_languages' dictionary & get its value. Print it.
-# N. Remove the last item from the following dictionary and print it:
-# car = {
-#     "brand": "Ford",
-#     "model": "Mustang",
-#     "year": 1964
-# }
-# O. Expand 'programming_languages' dictionary with the following data:
-# language_to_add = {
-#     "PHP": {
-#         "designed_by": "Rasmus Lerdorf",
-#         "first_appeared": 1995,
-#         "paradigm": "Server-side scripting",
-#         "typing": "Dynamic",
-#         "popularity": "Moderate"
-#     }
-# }
-# P. Use 'setdefault' method on any dictionary.
-# Q. Which Data Types can be represented as values of any dictionary?
-# R. In the following example:
-# data = {
-#     "Python3.x": {
-#         "Wep Development", "Machine Learning", "Penetration Testing", "Game Development"
-#     }
-# }
+Create a 'not_found_message' variable. Make it equal appropriate "not found" message.
+Try to get 'year's and 'color's values from the 'car'. Set the default value to 
+our "not found" message.
+'''
+car = {
+    "brand": "Chevrolet",
+    "model": "Camaro",
+    "year": 2017
+}
+not_found_message = 'not found'
+year = car.get('year', not_found_message)
+color = car.get('color', not_found_message)
+print(f'car\'s year: {year}, car\'s color: {color}')
 
-# It's giving an error if you try to get 'Python2.x' in this way:
-# data["Python2.x"]
-# Edit this code so it doesn't return an error.
+'''H. Print the first 6 keys from the following dictionary (hint: you should use 
+'list()' method to convert dict_keys to list and indexing to get the appropriate
+portion of data):
+countries_capitals = {
+    "USA": "Washington, D.C.",
+    "Canada": "Ottawa",
+    "United Kingdom": "London",
+    "France": "Paris",
+    "Germany": "Berlin",
+    "Japan": "Tokyo",
+    "Australia": "Canberra",
+    "Brazil": "Brasília",
+    "India": "New Delhi",
+    "South Africa": "Pretoria",
+}
+'''
+countries_capitals = {
+    "USA": "Washington, D.C.",
+    "Canada": "Ottawa",
+    "United Kingdom": "London",
+    "France": "Paris",
+    "Germany": "Berlin",
+    "Japan": "Tokyo",
+    "Australia": "Canberra",
+    "Brazil": "Brasília",
+    "India": "New Delhi",
+    "South Africa": "Pretoria",
+}
+dict_keys = list(countries_capitals.keys())
+
+print(f'First 6 key: {[dict_keys[i] for i in range(len(dict_keys)) if i<6]}')
+
+'''I. You have the following dictionary:
+programming_languages = {
+    "Python": {
+        "designed_by": "Guido van Rossum",
+        "first_appeared": 1991,
+        "paradigm": "Multi-paradigm",
+        "typing": "Dynamic",
+        "popularity": "High"
+    },
+    "JavaScript": {
+        "designed_by": "Brendan Eich",
+        "first_appeared": 1995,
+        "paradigm": "Multi-paradigm",
+        "typing": "Dynamic",
+        "popularity": "Very High"
+    },
+    "Java": {
+        "designed_by": "James Gosling",
+        "first_appeared": 1995,
+        "paradigm": "Object-oriented",
+        "typing": "Static",
+        "popularity": "High"
+    },
+    "C++": {
+        "designed_by": "Bjarne Stroustrup",
+        "first_appeared": 1985,
+        "paradigm": "Multi-paradigm",
+        "typing": "Static",
+        "popularity": "Moderate"
+    }
+}
+
+Using in f-strings print the year Python was appeared value.
+'''
+programming_languages = {
+    "Python": {
+        "designed_by": "Guido van Rossum",
+        "first_appeared": 1991,
+        "paradigm": "Multi-paradigm",
+        "typing": "Dynamic",
+        "popularity": "High"
+    },
+    "JavaScript": {
+        "designed_by": "Brendan Eich",
+        "first_appeared": 1995,
+        "paradigm": "Multi-paradigm",
+        "typing": "Dynamic",
+        "popularity": "Very High"
+    },
+    "Java": {
+        "designed_by": "James Gosling",
+        "first_appeared": 1995,
+        "paradigm": "Object-oriented",
+        "typing": "Static",
+        "popularity": "High"
+    },
+    "C++": {
+        "designed_by": "Bjarne Stroustrup",
+        "first_appeared": 1985,
+        "paradigm": "Multi-paradigm",
+        "typing": "Static",
+        "popularity": "Moderate"
+    }
+}
+print(f'Python year: {programming_languages['Python']['first_appeared']}')
+
+'''J. You have the following code snippet:
+tasks = {
+    "Alice": ["Buy groceries", "Finish report", "Call the doctor"],
+    "Bob": ["Walk the dog", "Pay bills", "Read a chapter"]
+}
+
+selected_person = "Alice"
+new_task = "Go to the gym"
+
+Add the new task to the selected person's tasks. Print the tasks & length of tasks 
+before and after edition.
+'''
+tasks = {
+    "Alice": ["Buy groceries", "Finish report", "Call the doctor"],
+    "Bob": ["Walk the dog", "Pay bills", "Read a chapter"]
+}
+selected_person = "Alice"
+new_task = "Go to the gym"
+print(f'Before tasks length: {len(tasks)}')
+values = tasks['Alice']
+values.append(new_task)
+tasks.update({selected_person : values})
+print(tasks)
+print(f'After tasks length: {len(tasks)}')
+
+'''K. There is a dictionary method that helps to create a dictionary with a collection
+of keys and apply a default value to that key. Using that method create a dictionary
+with all values equal to the '[0, 4, 8, 12, 16, 20]' list and keys should only be
+the numbers from 0 to 4, so your dictionary should look like:
+digits = [1, 2, 3, 4, 5]
+
+my_dict = {
+    0: [0, 4, 8, 12, 16, 20],
+    1: [0, 4, 8, 12, 16, 20],
+    2: [0, 4, 8, 12, 16, 20],
+    3: [0, 4, 8, 12, 16, 20],
+    4: [0, 4, 8, 12, 16, 20],
+}
+
+You should use list comprehension in this task.
+
+Then you should print some portion from the list values of a dictionary. The
+portion size depends on a key you are using to index the list.
+'''
+
+digits = [0, 1, 2, 3, 4, 5]
+value = [x*4 for x in digits]
+my_dict = dict.fromkeys(digits, value)
+print(my_dict)
+
+'''L. Print all items, values, keys from 'programming_languages' dictionary.
+'''
+item_list = programming_languages.items()
+print(item_list)
+keys_list = programming_languages.keys()
+print(keys_list)
+value_list = programming_languages.values()
+print(value_list)
+'''M. Remove 'Java' from 'programming_languages' dictionary & get its value. Print it.
+'''
+print('Remove Java')
+removed_language = programming_languages.pop('Java')
+print(removed_language)
+
+'''N. Remove the last item from the following dictionary and print it:
+car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+'''
+car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+last_item = car.popitem()
+print(last_item)
+
+'''O. Expand 'programming_languages' dictionary with the following data:
+language_to_add = {
+    "PHP": {
+        "designed_by": "Rasmus Lerdorf",
+        "first_appeared": 1995,
+        "paradigm": "Server-side scripting",
+        "typing": "Dynamic",
+        "popularity": "Moderate"
+    }
+}
+'''
+language_to_add = {
+    "PHP": {
+        "designed_by": "Rasmus Lerdorf",
+        "first_appeared": 1995,
+        "paradigm": "Server-side scripting",
+        "typing": "Dynamic",
+        "popularity": "Moderate"
+    }
+}
+
+programming_languages.update(language_to_add)
+print(programming_languages)
+
+'''P. Use 'setdefault' method on any dictionary.
+'''
+car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+
+color = car.setdefault("color", "white")
+print(color)
+print(car)
+
+'''Q. Which Data Types can be represented as values of any dictionary?
+'''
+# All data types
+
+'''R. In the following example:
+data = {
+    "Python3.x": {
+        "Wep Development", "Machine Learning", "Penetration Testing", "Game Development"
+    }
+}
+
+It's giving an error if you try to get 'Python2.x' in this way:
+data["Python2.x"]
+Edit this code so it doesn't return an error.
+'''
+data = {
+    "Python3.x": {
+        "Wep Development", "Machine Learning", "Penetration Testing", "Game Development"
+    }
+}
+python2 = data.get('Python2.x')
+print(python2)
 
 # - Chat GPT's Homework -
-# Task 1.
-# Create an empty dictionary called student_info.
-# Add the following key-value pairs to the dictionary:
-# "name": "John Doe"
-# "age": 20
-# "major": "Computer Science"
+'''Task 1.
+Create an empty dictionary called student_info.
+Add the following key-value pairs to the dictionary:
+"name": "John Doe"
+"age": 20
+"major": "Computer Science"
+'''
+student_info = {}
+student_info.update({'name': 'John Doe', 'age': 20, 'major': 'Computer Science'})
+print(student_info)
 
-# Task 2.
-# Print the value associated with the key "name" from the student_info dictionary.
-# Change the value of the "age" key to 21.
-# Add a new key-value pair: "gender": "Male".
+'''Task 2.
+Print the value associated with the key "name" from the student_info dictionary.
+Change the value of the "age" key to 21.
+Add a new key-value pair: "gender": "Male".
+'''
+name = student_info.get('name')
+print(name)
+student_info['age'] = 21
+student_info.update({'gender': 'Male'})
+print(student_info)
 
-# Task 3.
-# Create a new dictionary called grades with the following data:
-# "math": 85
-# "english": 92
-# "history": 78
-# Use the update method to add the key-value pairs from the grades dictionary into the student_info dictionary.
+'''Task 3.
+Create a new dictionary called grades with the following data:
+"math": 85
+"english": 92
+"history": 78
+Use the update method to add the key-value pairs from the grades dictionary into the student_info dictionary.
+'''
+grades = {
+    'math': 85,
+    'english': 92,
+    'history': 78
+}
+student_info.update({'grades': grades})
+print(student_info)
 
-# Task 4.
-# Remove the "history" key from the grades dictionary using the pop method, and print the value that was removed.
-# Remove the "major" key from the student_info dictionary using the del statement.
 
-# Task 5: Basic If-Else Statements
-# Write a Python program that does the following:
-# Takes an integer input from the user.
-# Checks if the input is greater than 10.
-# If it is, prints "The number is greater than 10."
-# If it's not, prints "The number is not greater than 10."
+'''Task 4.
+Remove the "history" key from the grades dictionary using the pop method, and print the value that was removed.
+Remove the "major" key from the student_info dictionary using the del statement.
+'''
+removed_grade = grades.pop('history')
+print(removed_grade)
+del student_info['major']
+print(student_info)
 
-# Task 6: Multiple Conditions
-# Write a Python program that:
-# Takes two integer inputs from the user.
-# Checks if both numbers are even (divisible by 2).
-# If both are even, prints "Both numbers are even."
-# If at least one is not even, prints "At least one number is not even."
 
-# Task 7: Grade Calculator
-# Write a Python program that:
-# Takes a numerical score as input from the user (0 to 100).
-# Uses if-elif-else statements to determine the corresponding letter grade based on the following scale:
-# A: 90-100
-# B: 80-89
-# C: 70-79
-# D: 60-69
-# F: 0-59
-# Prints the calculated letter grade.
+'''Task 5: Basic If-Else Statements
+Write a Python program that does the following:
+Takes an integer input from the user.
+Checks if the input is greater than 10.
+If it is, prints "The number is greater than 10."
+If it's not, prints "The number is not greater than 10."
+'''
+
+# ready = False
+# while not ready:
+#     number_str = input('Chek number is greater than 10: ')
+#     try:
+#         if int(number_str) or int(number_str) == 0:
+#             number = int(number_str)
+#             if number <= 10:
+#                 print('The number is not greater than 10')
+#             else:
+#                 print('The number is greater than 10')
+#         ready = True   
+#     except ValueError:
+#         print('Only number!')
+#         pass
+    
+
+'''Task 6: Multiple Conditions
+Write a Python program that:
+Takes two integer inputs from the user.
+Checks if both numbers are even (divisible by 2).
+If both are even, prints "Both numbers are even."
+If at least one is not even, prints "At least one number is not even."
+'''
+# print('Check if number even')
+# even_dict = {}
+# for x in range(2):
+#     ready = False
+#     while not ready:
+#         number_str = input('Number: ')
+#         try:
+#             if int(number_str) or int(number_str) == 0:
+#                 number = int(number_str)
+#                 if number % 2 == 0:
+#                     even_dict.update({number_str: True})
+#                 else:
+#                     even_dict.update({number_str: False})
+#             ready = True   
+#         except ValueError:
+#             print('Only number!')
+#             pass
+# multiple = True
+# for x in even_dict.values():
+#    multiple = multiple and x
+# print(even_dict)
+# print(multiple)
+# if multiple:
+#     print('Yes')
+# else:
+#     print('No')
+
+'''Task 7: Grade Calculator
+Write a Python program that:
+Takes a numerical score as input from the user (0 to 100).
+Uses if-elif-else statements to determine the corresponding letter grade based on the following scale:
+A: 90-100
+B: 80-89
+C: 70-79
+D: 60-69
+F: 0-59
+Prints the calculated letter grade.
+'''
+
 
 # Task 8: Leap Year Checker
 # Write a Python program that:
