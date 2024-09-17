@@ -1,4 +1,4 @@
-import pyautogui as pgui
+import random
 # Instructions: Write Python code for each of the following tasks. 
 # Make sure to use if statements appropriately to achieve the desired outcomes. 
 # If appropriate, comment your code to explain each step.
@@ -675,87 +675,150 @@ D: 60-69
 F: 0-59
 Prints the calculated letter grade.
 '''
+# F = [x for x in range(61)]
+# D = [x + 61 for x in (range(10))]
+# C = [x + 71 for x in (range(10))]
+# B = [x + 81 for x in (range(10))]
+# A = [x + 91 for x in (range(10))]
+# score = int(input('Your score: '))
+# if score in A:
+#     print('A')
+# elif score in B:
+#     print('B')
+# elif score in C:
+#     print('C')
+# elif score in D:
+#     print('D')
+# elif score in F:
+#     print('F')
+
+'''Task 8: Leap Year Checker
+Write a Python program that:
+Takes a year as input from the user.
+Checks if the year is a leap year or not.
+A leap year is divisible by 4, but not divisible by 100 unless it's also divisible by 400.
+Prints "Leap year" or "Not a leap year" accordingly.
+'''
+# print('Leap Year Checker')
+# year = int(input('Year: '))
+# if year % 400 == 0:
+#     print('Leap year')
+# else:
+#     print('Not a leap year')
+
+'''Task 9: Temperature Converter
+Write a Python program that:
+Takes a temperature in Celsius as input from the user.
+Converts it to Fahrenheit using the formula: Fahrenheit = (Celsius * 9/5) + 32.
+Prints the temperature in Fahrenheit.
+'''
+# print('Temperature Converter')
+# temperature = int(input('Enter temperature: '))
+# fahrenheit = temperature * 9 / 5  + 32
+# print(f'Temperature: {fahrenheit} Fa')
+
+'''Task 10: Number Comparison
+Write a Python program that:
+Takes three integer inputs from the user.
+Determines and prints the largest of the three numbers using if-else statements.
+'''
+# a = int(input('a= '))
+# b = int(input('b= '))
+# c = int(input('c= '))
+# if a >= b and a >= c:
+#     print(f'Max = {a}')
+# elif b >= a and b >= c:
+#     print(f'Max = {b}')
+# elif c >= a and c >= b:
+#     print(f'Max = {c}')
 
 
-# Task 8: Leap Year Checker
-# Write a Python program that:
-# Takes a year as input from the user.
-# Checks if the year is a leap year or not.
-# A leap year is divisible by 4, but not divisible by 100 unless it's also divisible by 400.
-# Prints "Leap year" or "Not a leap year" accordingly.
+'''Task 11: Positive or Negative
+Write a Python program that:
+Takes an integer as input from the user.
+Checks if the number is positive, negative, or zero.
+Prints "Positive," "Negative," or "Zero" accordingly.
+'''
+# print('Positive or Negative')
+# number = int(input('Number: '))
+# if number > 0:
+#     print('Positive')
+# elif number < 0:
+#     print('Negative')
+# else:
+#     print('Zero')
 
-# Task 9: Temperature Converter
-# Write a Python program that:
-# Takes a temperature in Celsius as input from the user.
-# Converts it to Fahrenheit using the formula: Fahrenheit = (Celsius * 9/5) + 32.
-# Prints the temperature in Fahrenheit.
+'''Task 12: Eligibility Checker
+Write a Python program that:
+Takes the age and citizenship status (True for U.S. citizen, False for non-U.S. citizen) as input from the user.
+Checks if the person is eligible to vote in the U.S. based on the following conditions:
+Must be at least 18 years old.
+Must be a U.S. citizen.
+Prints "You are eligible to vote" or "You are not eligible to vote" accordingly.
+'''
+# print('Eligibility Checker')
+# citizenship = int(input('1 for U.S. citizen, 0 for non-U.S. citizen: '))
+# age = int(input('Age: '))
+# if age > 18 and citizenship:
+#     print('You are eligible to vote" or "You are not eligible to vote')
+# else:
+#     print('False')
 
-# Task 10: Number Comparison
-# Write a Python program that:
-# Takes three integer inputs from the user.
-# Determines and prints the largest of the three numbers using if-else statements.
+'''Task 13: Password Strength Checker
+Write a Python program that:
+Takes a password as input from the user.
+Checks the strength of the password based on the following criteria:
+At least 8 characters long.
+Contains both uppercase and lowercase letters.
+Contains at least one digit (0-9).
+Prints "Strong password" or "Weak password" accordingly.
+'''
+# print('Password Strength Checker')
+# password = input('Check password: ')
+# if len(password) > 7 and not password.islower() and not password.isupper() \
+#     and not password.isalpha() and not password.isdigit():
+#     print('Strong password')
+# else:
+#     print('Weak password')
 
-# Task 11: Positive or Negative
-# Write a Python program that:
-# Takes an integer as input from the user.
-# Checks if the number is positive, negative, or zero.
-# Prints "Positive," "Negative," or "Zero" accordingly.
+'''Task 14: Rock-Paper-Scissors Game
+Write a Python program that:
+Implements a simple text-based rock-paper-scissors game.
+Takes the player's choice as input (rock, paper, or scissors).
+Generates a random choice for the computer.
+Determines the winner based on the game rules.
+Prints the result of the game (win, lose, or tie) and the computer's choice.
+'''
+# print('Rock-Paper-Scissors Game')
+# values = ['rock', 'paper', 'scissors']
+# selected = random.choice(values)
+# user_input = input('Your choice: ').strip().lower()
+# if user_input not  in values:
+#     print('Wrong choice')
+# else:
+#     if user_input == selected:
+#         print('Win')
+#     else:
+#         print('Lose')  
 
-# Task 12: Eligibility Checker
-# Write a Python program that:
-# Takes the age and citizenship status (True for U.S. citizen, False for non-U.S. citizen) as input from the user.
-# Checks if the person is eligible to vote in the U.S. based on the following conditions:
-# Must be at least 18 years old.
-# Must be a U.S. citizen.
-# Prints "You are eligible to vote" or "You are not eligible to vote" accordingly.
-
-# Task 13: Password Strength Checker
-# Write a Python program that:
-# Takes a password as input from the user.
-# Checks the strength of the password based on the following criteria:
-# At least 8 characters long.
-# Contains both uppercase and lowercase letters.
-# Contains at least one digit (0-9).
-# Prints "Strong password" or "Weak password" accordingly.
-
-# Task 14: Rock-Paper-Scissors Game
-# Write a Python program that:
-# Implements a simple text-based rock-paper-scissors game.
-# Takes the player's choice as input (rock, paper, or scissors).
-# Generates a random choice for the computer.
-# Determines the winner based on the game rules.
-# Prints the result of the game (win, lose, or tie) and the computer's choice.
-
-# - Comments -
-# A. One-line comment in any random three places of your code, if it's appropriate.
-# B. Multi-line comment anywhere in your code, if it's appropriate.
+'''- Comments -
+A. One-line comment in any random three places of your code, if it's appropriate.
+B. Multi-line comment anywhere in your code, if it's appropriate.'''
 
 
 
 # Quiz. (If-Statements)
 # 1. What is the keyword used to define an 'if' statement in Python?
 #     a) if
-#     b) case
-#     c) switch
-#     d) when
 
 # 2. How do you write an if statement in Python?
 #     a) if condition:
-#     b) if (condition)
-#     c) if {condition}
-#     d) if [condition]
 
 # 3. In Python, what is the symbol for 'not equal to' in an if statement?
-#     a) ==
 #     b) !=
-#     c) <=
-#     d) >=
 
 # 4. In Python, what is the purpose of the 'elif' statement?
-#     a) It is used for error handling.
-#     b) It is executed if the 'if' condition is True.
 #     c) It is executed if the 'if' condition is False.
-#     d) It is executed if the 'if' condition is True, and no 'else' condition is present.
 
 # 5. What will be the output of the following Python code?
 #     if 10 > 5:
@@ -764,9 +827,6 @@ Prints the calculated letter grade.
 #         print("This will not be printed")
 
 #     a) 10 is greater than 5
-#     b) This will not be printed
-#     c) SyntaxError
-#     d) 5 is greater than 10
 
 # 6. What is the output of the following Python code?
 #     x = 15
@@ -777,22 +837,13 @@ Prints the calculated letter grade.
 #     else:
 #         print("x is 20 or greater")
 
-#     a) x is less than 10
 #     b) x is less than 20 but greater than or equal to 10
-#     c) x is 20 or greater
-#     d) x is 15
 
 # 7. What is the primary purpose of an 'if' statement in Python?
 #     a) To execute a specific block of code based on a condition.
-#     b) To create loops in a program.
-#     c) To define a function.
-#     d) To print output to the console.
 
 # 8. When is an 'else' statement used in conjunction with an 'if' statement?
-#     a) To execute the code block if the 'if' condition is True.
 #     b) To execute the code block if none of the 'if' or 'elif' conditions are True.
-#     c) To execute the code block regardless of the 'if' condition.
-#     d) To define a loop within the 'if' statement.
 
 # 9. Consider the following Python code. What will be printed if the variable 'num' is greater than or equal to 20?
 #     num = 25
@@ -804,9 +855,6 @@ Prints the calculated letter grade.
 #         print("The number is less than the limit")
 
 #     a) The number is greater than or equal to the limit
-#     b) The number is less than the limit
-#     c) The number is exactly the limit
-#     d) There is a syntax error in the code
 
 # 10. Given the Python code snippet:
 #     num = 15
@@ -817,9 +865,6 @@ Prints the calculated letter grade.
 #     What will be the output if this code is executed?
 
 #     a) num is greater than 10
-#     b) num is less than 10
-#     c) num is 10
-#     d) num is equal to 15
 
 # 11. Given the Python code snippet:
 #     x = 15
@@ -829,11 +874,7 @@ Prints the calculated letter grade.
 #     else:
 #         print("x is either less than or equal to 10 or greater than or equal to 20")
 
-#     What will be the output if this code is executed?
 #     a) x is greater than 10 and less than 20
-#     b) x is either less than or equal to 10 or greater than or equal to 20
-#     c) x is 10
-#     d) x is 20
 
 # 12. Given the Python code snippet:
 #     y = 5
@@ -844,10 +885,7 @@ Prints the calculated letter grade.
 #         print("y is between 0 and 10 (inclusive)")
 
 #     What will be the output if this code is executed?
-#     a) y is less than 0 or greater than 10
 #     b) y is between 0 and 10 (inclusive)
-#     c) y is 0
-#     d) y is 10
 
 # 13. Given the Python code snippet:
 #     x = 8
@@ -863,9 +901,6 @@ Prints the calculated letter grade.
 
 #     What will be the output if this code is executed when x is 8?
 #     a) Code block 1: x is less than 10
-#     b) Code block 2: x is less than 15
-#     c) Code block 3: x is less than 20
-#     d) Code block 4: x is 20 or greater
 
 # 14. Given the Python code snippet:
 #     y = 25
@@ -880,32 +915,24 @@ Prints the calculated letter grade.
 #         print("Code block 4: y is 20 or greater")
 
 #     What will be the output if this code is executed when y is 25?
-#     a) Code block 1: y is less than 10
-#     b) Code block 2: y is less than 15
-#     c) Code block 3: y is less than 20
 #     d) Code block 4: y is 20 or greater
         
 # Quiz. (Dictionaries)
 # 1. Which of the following are true of Python dictionaries:
 #     a) Dictionaries are mutable
-#     b) Items are accessed by their position in a dictionary
 #     c) A dictionary can contain any object type except another dictionary
 #     d) Dictionaries can be nested to any depth
 #     e) Dictionaries are accessed by key
-#     f) All the keys in a dictionary must be of the same type
 
 # 2. Consider this dictionary:
 #     d = {'foo': 100, 'bar': 200, 'baz': 300}
 #     What is the result of this statement:
 #     d['bar':'baz']
 
-#     a) (200, 300)
-#     b) [200, 300]
-#     c) 200 300
 #     d) It raises an exception
 
 # 3. Suppose x is defined as follows:
-#     x = [
+# x = [
 #         'a',
 #         'b',
 #         {
@@ -921,8 +948,10 @@ Prints the calculated letter grade.
 #         'c',
 #         'd'
 #     ]
-
 # What is the expression involving x that accesses the value 30?
+#----------------------------------- x[2]['bar']['z']
+
+
 
 # 4. Select the correct ways to get the value of marks key.
 #     student = {
@@ -931,14 +960,11 @@ Prints the calculated letter grade.
 #     "marks": 75
 #     }
 
-#     a) m = student.get(2)
 #     b) m = student.get('marks')
-#     c) m = student[2])
 #     d) m = student['marks'])
 
 # 5. Dictionary keys must be immutable:
 #     a) True
-#     b) False
 
 # 6. Select the all correct way to remove the key marks from a dictionary:
 #     student = { 
@@ -949,26 +975,21 @@ Prints the calculated letter grade.
 
 #     a) student.pop("marks")
 #     b) del student["marks"]
-#     c) student.remove("marks")
-#     d) student.popitem("marks")
 
 # 7. What is the output of the following dictionary operation:
 #     dict1 = {"name": "Mike", "salary": 8000}
 #     temp = dict1.get("age")
 #     print(temp)
 
-#     a) KeyError: 'age'
 #     b) None
 
 # 8. Items are accessed by their position in a dictionary and all the keys in a 
 # dictionary must be of the same type:
-#     a) True
 #     b) False
 
 # 9. Select all correct ways to copy a dictionary in Python:
 #     a) dict2 = dict1.copy()
 #     b) dict2 = dict(dict1)
-#     c) dict2 = dict1
 
 # 10. Please select all correct ways to empty the following dictionary:
 #     student = { 
@@ -976,8 +997,6 @@ Prints the calculated letter grade.
 #         "class": 9, 
 #         "marks": 75 
 #     }
-#     a) del student
-#     b) del student[0:2]
 #     c) student.clear()
 
 # 11. What is the output of the following:
@@ -988,9 +1007,7 @@ Prints the calculated letter grade.
 #     ])
 #     print(sampleDict)
 
-#     a) [ ('first', 100), ('second', 200), ('third', 300) ]
 #     b) Options: SyntaxError: invalid syntax
-#     c) {'first': 1, 'second': 2, 'third': 3}
 
 # 12. Select the correct way to access the value of a history subject:
 #     sample_dict = {
@@ -1006,8 +1023,6 @@ Prints the calculated letter grade.
 #     }
 
 #     a) sample_dict['class']['student']['marks']['history']
-#     b) sample_dict['class']['student']['marks'][1]
-#     c) sample_dict['class'][0]['marks']['history']
 
 # 13. Select the correct way to print Emma's age:
 #     student = {
@@ -1015,9 +1030,7 @@ Prints the calculated letter grade.
 #         2: {'name': 'Mike', 'age': '22', 'sex': 'Male'}
 #     }
 
-#     a) student[0][1]
 #     b) student[1]["age"]
-#     c) student[0]["age"]
 
 # 14. What is the output of the following dictionary operation:
 #     dict1 = {"name": "Mike", "salary": 8000}
@@ -1025,7 +1038,6 @@ Prints the calculated letter grade.
 #     print(temp)
 
 #     a) KeyError: 'age'
-#     b) None
 
 # 15. What is the output of the following code:
 #     dict1 = {"key1": 1, "key2": 2}
@@ -1033,9 +1045,7 @@ Prints the calculated letter grade.
 #     print(dict1 == dict2)
 
 #     a) True
-#     b) False
 
 # 16. Select correct ways to create an empty dictionary:
 #     a) sample_dict = { }
 #     b) sample_dict = dict()
-#     c) sample_dict = dict{}
