@@ -69,124 +69,124 @@ else:
 '''G. Write a program to check whether a number accepted from user is divisible by 2
 and 3 both.
 '''
-# print('divisible by 2 and 3')
-# user_input = input('Number: ')
-# number = 0
-# is_allright = False
-# while not is_allright:  # Check if input is number
-#     try:
-#         if int(user_input):
-#             number = int(user_input)
-#             is_allright = True
+print('divisible by 2 and 3')
+user_input = input('Number: ')
+number = 0
+is_allright = False
+while not is_allright:  # Check if input is number
+    try:
+        if int(user_input):
+            number = int(user_input)
+            is_allright = True
 
-#     except ValueError:
-#         print('Only number!')
-#         user_input = input('Number: ')
-#         pass
-# print(number)
-# if(number % 6 == 0):    # Method 1
-#     print(f'{number} divide 2 and 3')
-# else:
-#     print(f'{number} does not divide 2 and 3')
-# if(number % 2 == 0 and number % 3 == 0):    # Method 2
-#     print(f'{number} divide 2 and 3')
-# else:
-#     print(f'{number} doesn\'t divide 2 and 3')
+    except ValueError:
+        print('Only number!')
+        user_input = input('Number: ')
+        pass
+print(number)
+if(number % 6 == 0):    # Method 1
+    print(f'{number} divide 2 and 3')
+else:
+    print(f'{number} does not divide 2 and 3')
+if(number % 2 == 0 and number % 3 == 0):    # Method 2
+    print(f'{number} divide 2 and 3')
+else:
+    print(f'{number} doesn\'t divide 2 and 3')
 
 '''H. Write a program that finds the largest number out of three numbers accepted from user.
 '''
-# print('Largest number find')
-# numbers = []
-# length = len(numbers) 
-# print('Add  3 numbers, click Enter after every number')
-# while len(numbers) < 3:
-#     user_input = input('Enter number: ')
-#     try:
-#         if int(user_input):
-#             numbers.append(int(user_input))
-#             pass
-#     except ValueError:
-#         print('Only number!')
-#         pass
+print('Largest number find')
+numbers = []
+length = len(numbers) 
+print('Add  3 numbers, click Enter after every number')
+while len(numbers) < 3:
+    user_input = input('Enter number: ')
+    try:
+        if int(user_input):
+            numbers.append(int(user_input))
+            pass
+    except ValueError:
+        print('Only number!')
+        pass
     
-# print(numbers)
-# numbers.sort()
-# print(f'Largest is: {numbers[-1]}')
+print(numbers)
+numbers.sort()
+print(f'Largest is: {numbers[-1]}')
 
 '''I. Write a program that gets any input from user. It should print 'Lower job!' if all
 characters in user's input are lowercase, otherwise print 'Upper job!'.
 '''
-# user_input = input('Any word or sentence: ')
-# if user_input.islower():
-#     print('Lower job!')
-# else:
-#     print('Upper job!')
+user_input = input('Any word or sentence: ')
+if user_input.islower():
+    print('Lower job!')
+else:
+    print('Upper job!')
 
 '''J. Write a program to check whether a number entered by user is three digit number or not.
 '''
-# print('Number three digit or')
-# user_input = input('Number: ')
-# number = None
-# while number is None:  
-#     try:
-#         if int(user_input):
-#             number = int(user_input)
+print('Number three digit or')
+user_input = input('Number: ')
+number = None
+while number is None:  
+    try:
+        if int(user_input):
+            number = int(user_input)
 
-#     except ValueError:
-#         print('Only number!')
-#         user_input = input('Number: ')
-#         pass
-#     div_number = number // 100
-# if 0 < div_number < 10:
-#     print(f'{number} is three digit number')
-# else:
-#     print(f'{number} is not three digit number')
+    except ValueError:
+        print('Only number!')
+        user_input = input('Number: ')
+        pass
+    div_number = number // 100
+if 0 < div_number < 10:
+    print(f'{number} is three digit number')
+else:
+    print(f'{number} is not three digit number')
 
 '''K. Accept the temperature in degree Celcius of water and check whether it's boiling or
 not (boiling point of water is 100 degree Celcius).
 '''
-# temperature = None
-# user_input = input('Enter temperture: ')
-# try:
-#     if int(user_input):
-#         temperature = int(user_input)
-#         if(temperature > 100):
-#              print('it\'s boiling')
-#         else:
-#              print('it\'s not boiling')
-# except ValueError:
-#     print('It is not temperature')
-#     pass
+temperature = None
+user_input = input('Enter temperture: ')
+try:
+    if int(user_input):
+        temperature = int(user_input)
+        if(temperature > 100):
+             print('it\'s boiling')
+        else:
+             print('it\'s not boiling')
+except ValueError:
+    print('It is not temperature')
+    pass
 
 '''L. Accept the IQ of 3 people and display the highest one.
 '''
-# print('IQ of 3 people and display the highest one')
-# persons = {
-#     'Lale': 0,
-#     'Leyla': 0,
-#     'Leman': 0
-#     }
-# for x in persons:
-#     print(f'{x}:', end='   ')
-#     persons.update({x: input()})
-# print(persons)
-# values_list = list(persons.values())
-# values_list.sort()
-# print(values_list)
-# for person in persons:
-#     if persons[person] == values_list[-1]:
-#         print(f'{person} {persons[person]} IQ highest')
-#         break
+print('IQ of 3 people and display the highest one')
+persons = {
+    'Lale': 0,
+    'Leyla': 0,
+    'Leman': 0
+    }
+for x in persons:
+    print(f'{x}:', end='   ')
+    persons.update({x: input()})
+print(persons)
+values_list = list(persons.values())
+values_list.sort()
+print(values_list)
+for person in persons:
+    if persons[person] == values_list[-1]:
+        print(f'{person} {persons[person]} IQ highest')
+        break
 
 '''M. Write a program to check whether a character accepted from user is vowel or not.
 '''
-# print('Character accepted from user is vowel or not')
-# vowel_chars = ('a', 'e', 'i', 'o', 'u')
-# value = input('character: ')
-# if value.strip()[-1] in vowel_chars:
-#     print(True)
-# else:
-#     print(False)
+print('Character accepted from user is vowel or not')
+vowel_chars = ('a', 'e', 'i', 'o', 'u')
+value = input('character: ')
+if value.strip()[-1] in vowel_chars:
+    print(True)
+else:
+    print(False)
 
 
 '''N. Accept the following from the user and calculate the percentage of class attendance:
@@ -194,24 +194,24 @@ not (boiling point of water is 100 degree Celcius).
 2. Total number of days for absence
 '''
 
-# class_dict = {
-#     'class_days': 0,
-#     'absence': 0
-#     }
-# for x in class_dict.keys():
+class_dict = {
+    'class_days': 0,
+    'absence': 0
+    }
+for x in class_dict.keys():
     
-#     is_int = False
-#     while is_int == False:
-#         print(f'{x}:', end='   ')
-#         try:
-#             days = int(input())
-#             class_dict.update({x: days})
-#             is_int = True
-#         except ValueError:
-#             print('Only Number')
-#             pass
-# attendance_percentage = 100 / class_dict['class_days'] * (class_dict['class_days'] - class_dict['absence'])
-# print(f'percentage of class attendance: {attendance_percentage:.1f} %')
+    is_int = False
+    while is_int == False:
+        print(f'{x}:', end='   ')
+        try:
+            days = int(input())
+            class_dict.update({x: days})
+            is_int = True
+        except ValueError:
+            print('Only Number')
+            pass
+attendance_percentage = 100 / class_dict['class_days'] * (class_dict['class_days'] - class_dict['absence'])
+print(f'percentage of class attendance: {attendance_percentage:.1f} %')
 
 
 '''O. Accept the percentage from the user and display the grade according to the following
@@ -248,19 +248,19 @@ print(country)
 gender). Ask user for any key in your dictionary. Print the value of the given
 key from the dictionary. Try to ask all keys.
 '''
-# person = {
-#     'name': 'Savalan',
-#     'surname': 'Qorxmaz',
-#     'age': 35,
-#     'family_status': 'single'
-# }
-# *rest, b = tuple(person.keys())
-# print(f'Enter {', '.join(rest)} or {b}')
-# user_input = input('key: ')
-# if user_input in person.keys():
-#     print(person[user_input])
-# else:
-#     print('There are no key')
+person = {
+    'name': 'Savalan',
+    'surname': 'Qorxmaz',
+    'age': 35,
+    'family_status': 'single'
+}
+*rest, b = tuple(person.keys())
+print(f'Enter {', '.join(rest)} or {b}')
+user_input = input('key: ')
+if user_input in person.keys():
+    print(person[user_input])
+else:
+    print('There are no key')
 
 '''C. Create a dictionary with stock data of clothes (cloth name + amount). Let 
 the user choose any of keys and add some count to it.
@@ -271,9 +271,9 @@ clothes = {
     'jacket': 80,
     'shirt': 50
 }
-# new_clothe = input('Add new one')
-# clothes.update({new_clothe: 200})
-# print(clothes)
+new_clothe = input('Add new one')
+clothes.update({new_clothe: 200})
+print(clothes)
 
 '''D. Copy any dictionary from previous tasks. Print it.
 '''
@@ -291,14 +291,14 @@ any topic (books, cars, info, items, grades...) and let the user fill it with
 minimum 4 key-value pairs.
 '''
 print('user add data to dictionary (key & value).')
-# new_dict = {}
-# stop = ''
-# while stop != 'stop':
-#     key = input('Add key: ')
-#     value = input('Add value: ')
-#     stop =  input('If yo want to cancel, write stop, else what you want): ')
-#     new_dict.update({key: value})
-# print(new_dict)
+new_dict = {}
+stop = ''
+while stop != 'stop':
+    key = input('Add key: ')
+    value = input('Add value: ')
+    stop =  input('If yo want to cancel, write stop, else what you want): ')
+    new_dict.update({key: value})
+print(new_dict)
 
 '''G. You have the following dictionary:
 car = {
@@ -614,20 +614,20 @@ If it is, prints "The number is greater than 10."
 If it's not, prints "The number is not greater than 10."
 '''
 
-# ready = False
-# while not ready:
-#     number_str = input('Chek number is greater than 10: ')
-#     try:
-#         if int(number_str) or int(number_str) == 0:
-#             number = int(number_str)
-#             if number <= 10:
-#                 print('The number is not greater than 10')
-#             else:
-#                 print('The number is greater than 10')
-#         ready = True   
-#     except ValueError:
-#         print('Only number!')
-#         pass
+ready = False
+while not ready:
+    number_str = input('Chek number is greater than 10: ')
+    try:
+        if int(number_str) or int(number_str) == 0:
+            number = int(number_str)
+            if number <= 10:
+                print('The number is not greater than 10')
+            else:
+                print('The number is greater than 10')
+        ready = True   
+    except ValueError:
+        print('Only number!')
+        pass
     
 
 '''Task 6: Multiple Conditions
@@ -637,32 +637,32 @@ Checks if both numbers are even (divisible by 2).
 If both are even, prints "Both numbers are even."
 If at least one is not even, prints "At least one number is not even."
 '''
-# print('Check if number even')
-# even_dict = {}
-# for x in range(2):
-#     ready = False
-#     while not ready:
-#         number_str = input('Number: ')
-#         try:
-#             if int(number_str) or int(number_str) == 0:
-#                 number = int(number_str)
-#                 if number % 2 == 0:
-#                     even_dict.update({number_str: True})
-#                 else:
-#                     even_dict.update({number_str: False})
-#             ready = True   
-#         except ValueError:
-#             print('Only number!')
-#             pass
-# multiple = True
-# for x in even_dict.values():
-#    multiple = multiple and x
-# print(even_dict)
-# print(multiple)
-# if multiple:
-#     print('Yes')
-# else:
-#     print('No')
+print('Check if number even')
+even_dict = {}
+for x in range(2):
+    ready = False
+    while not ready:
+        number_str = input('Number: ')
+        try:
+            if int(number_str) or int(number_str) == 0:
+                number = int(number_str)
+                if number % 2 == 0:
+                    even_dict.update({number_str: True})
+                else:
+                    even_dict.update({number_str: False})
+            ready = True   
+        except ValueError:
+            print('Only number!')
+            pass
+multiple = True
+for x in even_dict.values():
+   multiple = multiple and x
+print(even_dict)
+print(multiple)
+if multiple:
+    print('Yes')
+else:
+    print('No')
 
 '''Task 7: Grade Calculator
 Write a Python program that:
@@ -675,22 +675,22 @@ D: 60-69
 F: 0-59
 Prints the calculated letter grade.
 '''
-# F = [x for x in range(61)]
-# D = [x + 61 for x in (range(10))]
-# C = [x + 71 for x in (range(10))]
-# B = [x + 81 for x in (range(10))]
-# A = [x + 91 for x in (range(10))]
-# score = int(input('Your score: '))
-# if score in A:
-#     print('A')
-# elif score in B:
-#     print('B')
-# elif score in C:
-#     print('C')
-# elif score in D:
-#     print('D')
-# elif score in F:
-#     print('F')
+F = [x for x in range(61)]
+D = [x + 61 for x in (range(10))]
+C = [x + 71 for x in (range(10))]
+B = [x + 81 for x in (range(10))]
+A = [x + 91 for x in (range(10))]
+score = int(input('Your score: '))
+if score in A:
+    print('A')
+elif score in B:
+    print('B')
+elif score in C:
+    print('C')
+elif score in D:
+    print('D')
+elif score in F:
+    print('F')
 
 '''Task 8: Leap Year Checker
 Write a Python program that:
@@ -699,12 +699,12 @@ Checks if the year is a leap year or not.
 A leap year is divisible by 4, but not divisible by 100 unless it's also divisible by 400.
 Prints "Leap year" or "Not a leap year" accordingly.
 '''
-# print('Leap Year Checker')
-# year = int(input('Year: '))
-# if year % 400 == 0:
-#     print('Leap year')
-# else:
-#     print('Not a leap year')
+print('Leap Year Checker')
+year = int(input('Year: '))
+if year % 400 == 0:
+    print('Leap year')
+else:
+    print('Not a leap year')
 
 '''Task 9: Temperature Converter
 Write a Python program that:
@@ -712,25 +712,25 @@ Takes a temperature in Celsius as input from the user.
 Converts it to Fahrenheit using the formula: Fahrenheit = (Celsius * 9/5) + 32.
 Prints the temperature in Fahrenheit.
 '''
-# print('Temperature Converter')
-# temperature = int(input('Enter temperature: '))
-# fahrenheit = temperature * 9 / 5  + 32
-# print(f'Temperature: {fahrenheit} Fa')
+print('Temperature Converter')
+temperature = int(input('Enter temperature: '))
+fahrenheit = temperature * 9 / 5  + 32
+print(f'Temperature: {fahrenheit} Fa')
 
 '''Task 10: Number Comparison
 Write a Python program that:
 Takes three integer inputs from the user.
 Determines and prints the largest of the three numbers using if-else statements.
 '''
-# a = int(input('a= '))
-# b = int(input('b= '))
-# c = int(input('c= '))
-# if a >= b and a >= c:
-#     print(f'Max = {a}')
-# elif b >= a and b >= c:
-#     print(f'Max = {b}')
-# elif c >= a and c >= b:
-#     print(f'Max = {c}')
+a = int(input('a= '))
+b = int(input('b= '))
+c = int(input('c= '))
+if a >= b and a >= c:
+    print(f'Max = {a}')
+elif b >= a and b >= c:
+    print(f'Max = {b}')
+elif c >= a and c >= b:
+    print(f'Max = {c}')
 
 
 '''Task 11: Positive or Negative
@@ -739,14 +739,14 @@ Takes an integer as input from the user.
 Checks if the number is positive, negative, or zero.
 Prints "Positive," "Negative," or "Zero" accordingly.
 '''
-# print('Positive or Negative')
-# number = int(input('Number: '))
-# if number > 0:
-#     print('Positive')
-# elif number < 0:
-#     print('Negative')
-# else:
-#     print('Zero')
+print('Positive or Negative')
+number = int(input('Number: '))
+if number > 0:
+    print('Positive')
+elif number < 0:
+    print('Negative')
+else:
+    print('Zero')
 
 '''Task 12: Eligibility Checker
 Write a Python program that:
@@ -756,13 +756,13 @@ Must be at least 18 years old.
 Must be a U.S. citizen.
 Prints "You are eligible to vote" or "You are not eligible to vote" accordingly.
 '''
-# print('Eligibility Checker')
-# citizenship = int(input('1 for U.S. citizen, 0 for non-U.S. citizen: '))
-# age = int(input('Age: '))
-# if age > 18 and citizenship:
-#     print('You are eligible to vote" or "You are not eligible to vote')
-# else:
-#     print('False')
+print('Eligibility Checker')
+citizenship = int(input('1 for U.S. citizen, 0 for non-U.S. citizen: '))
+age = int(input('Age: '))
+if age > 18 and citizenship:
+    print('You are eligible to vote" or "You are not eligible to vote')
+else:
+    print('False')
 
 '''Task 13: Password Strength Checker
 Write a Python program that:
@@ -773,13 +773,13 @@ Contains both uppercase and lowercase letters.
 Contains at least one digit (0-9).
 Prints "Strong password" or "Weak password" accordingly.
 '''
-# print('Password Strength Checker')
-# password = input('Check password: ')
-# if len(password) > 7 and not password.islower() and not password.isupper() \
-#     and not password.isalpha() and not password.isdigit():
-#     print('Strong password')
-# else:
-#     print('Weak password')
+print('Password Strength Checker')
+password = input('Check password: ')
+if len(password) > 7 and not password.islower() and not password.isupper() \
+    and not password.isalpha() and not password.isdigit():
+    print('Strong password')
+else:
+    print('Weak password')
 
 '''Task 14: Rock-Paper-Scissors Game
 Write a Python program that:
@@ -789,17 +789,17 @@ Generates a random choice for the computer.
 Determines the winner based on the game rules.
 Prints the result of the game (win, lose, or tie) and the computer's choice.
 '''
-# print('Rock-Paper-Scissors Game')
-# values = ['rock', 'paper', 'scissors']
-# selected = random.choice(values)
-# user_input = input('Your choice: ').strip().lower()
-# if user_input not  in values:
-#     print('Wrong choice')
-# else:
-#     if user_input == selected:
-#         print('Win')
-#     else:
-#         print('Lose')  
+print('Rock-Paper-Scissors Game')
+values = ['rock', 'paper', 'scissors']
+selected = random.choice(values)
+user_input = input('Your choice: ').strip().lower()
+if user_input not  in values:
+    print('Wrong choice')
+else:
+    if user_input == selected:
+        print('Win')
+    else:
+        print('Lose')  
 
 '''- Comments -
 A. One-line comment in any random three places of your code, if it's appropriate.
