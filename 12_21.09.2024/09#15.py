@@ -14,25 +14,25 @@ Use a for loop to iterate through the numbers. Print the sum of
 all numbers entered by the user. Use the break statement to exit 
 the loop early if the user inputs a negative number.
 '''
-# sum = 0
-# for i in range(10):
-#     number = int(input('Number: '))
-#     if number < 0:
-#         print(sum)
-#         break
-#     sum += number
-# print(sum)
+total = 0
+for i in range(10):
+    number = int(input('Number: '))
+    if number < 0:
+        print(total)
+        break
+    total += number
+print(total)
 
 '''C. Write a Python program that takes an integer as input from 
 the user and prints its multiplication table up to 10 using a for loop. 
 Use the continue statement to skip the multiplication if the result 
 is less than 30.
 '''
-# number = int(input('Number: '))
-# for i in range(1, 11):
-#     if i * number < 30:
-#         continue
-#     print(f'{number} x {i} = {i * number}')
+number = int(input('Number: '))
+for i in range(1, 11):
+    if i * number < 30:
+        continue
+    print(f'{number} x {i} = {i * number}')
 
 
 '''D. Write a Python program to find and print all prime numbers between 
@@ -83,26 +83,26 @@ print(fib)
 Using a for loop, print all even numbers in reverse order from n down 
 to 2. Use the continue statement to skip odd numbers during the iteration.
 '''
-# print('even numbers')
-# number = int(input('Number: '))
-# for i in range(number, 0, -1):
-#     if i % 2 != 0:
-#         continue
-#     print(i)
+print('even numbers')
+number = int(input('Number: '))
+for i in range(number, 0, -1):
+    if i % 2 != 0:
+        continue
+    print(i)
 
 '''G. Write a Python program that prompts the user for a password. Use a for 
 loop to iterate over a predefined list of passwords. If the entered password 
 matches any of the predefined passwords, print "Access granted" and use the 
 break statement to exit the loop. If no match is found, print "Access denied".
 '''
-# pasword_list = ['123', '321', 'qwerty', 'asdfg']
-# password = input('Password: ')
-# for pas in pasword_list:
-#     if pas == password:
-#         print('Access granted')
-#         break
-# else:
-#     print('Access denied')
+pasword_list = ['123', '321', 'qwerty', 'asdfg']
+password = input('Password: ')
+for pas in pasword_list:
+    if pas == password:
+        print('Access granted')
+        break
+else:
+    print('Access denied')
         
 
 
@@ -111,15 +111,15 @@ Use a for loop to iterate through the numbers. Compute and print the average
 of all positive numbers entered by the user. Use the continue statement 
 to skip negative numbers during the calculation.
 '''
-# print('average of all positive numbers')
-# numbers = [ ]
-# for _ in range(10):
-#     number = int(input('Number: '))
-#     if number < 0:
-#         continue
-#     numbers.append(number)
-# avg = sum(numbers) / len(numbers)
-# print(f'List: {numbers}\n average: {avg}')
+print('average of all positive numbers')
+numbers = [ ]
+for _ in range(10):
+    number = int(input('Number: '))
+    if number < 0:
+        continue
+    numbers.append(number)
+avg = sum(numbers) / len(numbers)
+print(f'List: {numbers}\n average: {avg}')
 
 
 '''I. Write a Python program that prompts the user to input a sentence. 
@@ -127,22 +127,22 @@ Use a for loop to iterate through the characters in the sentence and count
 the number of vowels (a, e, i, o, u). Print the total count of vowels. 
 Use the continue statement to skip counting for non-alphabetic characters.
 '''
-# print('vowels')
-# vowels = {
-#     'a': 0,
-#     'e': 0,
-#     'i': 0,
-#     'o': 0,
-#     'u': 0
-#     }
-# sentence = input('Sentence: ')
-# for x in sentence:
-#     if not x.isalpha():
-#         continue
-#     if x in vowels.keys():
-#         vowels[x] +=1
-# print(vowels)
-# print(f'Total vowels: {sum(list(vowels.values()))}')
+print('vowels')
+vowels = {
+    'a': 0,
+    'e': 0,
+    'i': 0,
+    'o': 0,
+    'u': 0
+    }
+sentence = input('Sentence: ')
+for x in sentence:
+    if not x.isalpha():
+        continue
+    if x in vowels.keys():
+        vowels[x] +=1
+print(vowels)
+print(f'Total vowels: {sum(list(vowels.values()))}')
 
 
 '''J. Write a Python program that generates a random password of a specified 
@@ -150,35 +150,35 @@ length based on user input. Ask the user to input the desired password
 length and use a for loop to generate and print the password. Use the 
 break statement to exit the loop after generating the password.
 '''
-# print('random password')
-# length = int(input('Password length, max 64: '))
-# password_chars = []
-# chars = range(48, 123)
-# for i in range(10):
-#     selected_char = random.randrange(48, 122)
-#     password_chars.append(chr(selected_char))
-#     if i == length:
-#         break
-# password = ''.join(password_chars)
-# print(f'Password is: {password}')
+print('random password')
+length = int(input('Password length, max 64: '))
+password_chars = []
+chars = range(48, 123)
+for i in range(length):
+    selected_char = random.randrange(48, 122)
+    password_chars.append(chr(selected_char))
+    if i == length:
+        break
+password = ''.join(password_chars)
+print(f'Password is: {password}')
 
 
 '''K. Write a Python program that prompts the user to enter the names of 
 three cities and their corresponding populations. Use a for loop to populate 
 a dictionary where the city names are keys and the populations are values.
 '''
-# print('cities and their populations')
-# cities = {}
-# length = [x for x in range(3)]
-# for i in range(3):
-#     city = input('City: ')
-#     population = int(input('Population: '))
-#     while cities.get(city):
-#         print('city already has')
-#         city = input('City: ')
-#         population = int(input('Population: '))
-#     cities.update({city: population})
-# print(cities)
+print('cities and their populations')
+cities = {}
+length = [x for x in range(3)]
+for i in range(3):
+    city = input('City: ')
+    population = int(input('Population: '))
+    while cities.get(city):
+        print('city already has')
+        city = input('City: ')
+        population = int(input('Population: '))
+    cities.update({city: population})
+print(cities)
 
 
 '''L. Write a Python program that asks the user to input a sentence. Use a for 
@@ -186,46 +186,46 @@ loop to iterate through the characters in the sentence and count the number
 of vowels (a, e, i, o, u). Store the counts in a dictionary where the vowels 
 are keys and the counts are values.
 '''
-# print('vowels')
-# vowels = {
-#     'a': 0,
-#     'e': 0,
-#     'i': 0,
-#     'o': 0,
-#     'u': 0
-#     }
-# sentence = input('Sentence: ')
-# for x in sentence:
-#     if not x.isalpha():
-#         continue
-#     if x in vowels.keys():
-#         vowels[x] +=1
-# print(vowels)
+print('vowels')
+vowels = {
+    'a': 0,
+    'e': 0,
+    'i': 0,
+    'o': 0,
+    'u': 0
+    }
+sentence = input('Sentence: ')
+for x in sentence:
+    if not x.isalpha():
+        continue
+    if x in vowels.keys():
+        vowels[x] +=1
+print(vowels)
 
 '''M. Write a Python program that allows the user to enter key-value pairs into 
 a dictionary. Prompt the user to input a key and a value, and use a for loop 
 to allow them to enter multiple pairs. Print the dictionary after each addition.
 '''
-# print('key-value pairs into a dictionary')
-# user_input = {}
-# for i in range(5):
-#     key = input('Key: ')
-#     value = input('value: ')
-#     user_input.update({key: value})
-#     print(user_input)
+print('key-value pairs into a dictionary')
+user_input = {}
+for i in range(5):
+    key = input('Key: ')
+    value = input('value: ')
+    user_input.update({key: value})
+    print(user_input)
 
 '''N. Write a Python program that prompts the user to input a word or phrase. 
 Use a for loop to iterate through the characters and count the frequency of 
 each letter in the input. Store the counts in a dictionary where the letters 
 are keys and the counts are values.
 '''
-# print('Store the counts in a dictionary')
-# chars_dict = {}
-# phrase = input('Phrase: ').strip()
-# phrase = ''.join(phrase.split())
-# for x in phrase:
-#     chars_dict.update({x: chars_dict.get(x, 0) + 1})
-# print(chars_dict)
+print('Store the counts in a dictionary')
+chars_dict = {}
+phrase = input('Phrase: ').strip()
+phrase = ''.join(phrase.split())
+for x in phrase:
+    chars_dict.update({x: chars_dict.get(x, 0) + 1})
+print(chars_dict)
 
 '''O. Write a program to use for loop to print the following reverse number pattern:
 5 4 3 2 1 
@@ -275,62 +275,100 @@ number = int(number)    # Method 2
 total = 0
 for x in range(len(str(number))):
     total += number % 10
-    number = number// 10
-print(f'Number is {number}, sum of digits: {total}')
+    number = number // 10
+print(f' sum of digits: {total}')
 
 '''Task 2.
 Write a program to calculate the sum of series up to n term. 
 For example, if n = 5 the series will become 2 + 22 + 222 + 2222 + 22222 = 24690
 '''
+print('sum of series up to n term')
+numbers =[ ]
+n = int(input('max digit length: '))
+r = int(input('Repeated digit: '))
+for i in range(1, n+1):
+    numbers.append(int(str(r) * i))
+print(numbers)
+print(f'Total = {sum(numbers)}')
 
-
-# Task 3.
-# Write a program to display whether the number is prime or not.
-# Prime numbers are natural numbers that are divisible by only 1 and the number itself.
+'''Task 3.
+Write a program to display whether the number is prime or not.
+Prime numbers are natural numbers that are divisible by only 1 and the number itself.
+'''
+print('number is prime or not')
+number = int(input('Number: '))
+for i in range(2, number):
+    if number % i == 0:
+        print(f'{number} is non-prime')
+        break
+else:
+    print(f'{number} is prime')
 
 # - Chat GPT's Project -
-# Project: Password Validation
+'''Project: Password Validation
 
-# Write a Python program that prompts the user to enter a password. The program 
-# should check the validity of the password based on the following conditions:
+Write a Python program that prompts the user to enter a password. The program 
+should check the validity of the password based on the following conditions:
+The password must be at least 8 characters long.
+The password must contain at least one uppercase letter, one lowercase letter, 
+and one numeric digit.
+The password must not contain the word "password" (case insensitive).
+Use a for loop to iterate through the characters of the password and implement 
+the following actions:If the current character is a space, use continue to skip the rest of the loop 
+and move to the next character.
+If the password contains the word "password" (case insensitive), use break to 
+immediately exit the loop and print "Invalid password".
+After the loop, check if the password meets all the conditions. If it does, 
+print "Valid password". Otherwise, print "Invalid password".
+Ensure that the program provides appropriate messages to guide the user and 
+thoroughly tests the input for validity.
 
-# The password must be at least 8 characters long.
-# The password must contain at least one uppercase letter, one lowercase letter, 
-# and one numeric digit.
-# The password must not contain the word "password" (case insensitive).
-# Use a for loop to iterate through the characters of the password and implement 
-# the following actions:
+This task challenges the usage of for loops, break, and continue to handle 
+complex conditions and ensure secure password validation. Happy coding!
+'''
+print('Password Validation')
+password = input('password: ').strip()
+password_defisient = {
+    'min_length': False,
+    'has_uppercase': False,
+    'has_lowercase': False,
+    'has_digit': False,
+    'not_password_word': False
+}
+check_upper = False
+check_lower = False
+check_digit = False
+if len(password) < 8:
+    password_defisient['min_length'] = 'Min length must 8'
+    
+for i, x in enumerate(password):
+    if x == ' ':
+        continue
+    if password[i:].lower().startswith('password'):
+        password_defisient['not_password_word'] = 'Password word has'
+    check_digit  = check_digit or x.isdigit()
+    check_lower  = check_lower or x.islower()
+    check_upper  = check_upper or x.isupper()
+if not check_upper:
+     password_defisient['has_uppercase'] = 'Min 1 uppercase'
+if not check_lower:
+     password_defisient['has_lowercase'] = 'Min 1 lowercase'
+if not check_digit:
+     password_defisient['has_digit'] = 'Min 1 digit'
+defisient_list = list(password_defisient.values())
+defisient_list = [x for x in defisient_list if x ]
 
-# If the current character is a space, use continue to skip the rest of the loop 
-# and move to the next character.
-# If the password contains the word "password" (case insensitive), use break to 
-# immediately exit the loop and print "Invalid password".
-# After the loop, check if the password meets all the conditions. If it does, 
-# print "Valid password". Otherwise, print "Invalid password".
-# Ensure that the program provides appropriate messages to guide the user and 
-# thoroughly tests the input for validity.
-
-# This task challenges the usage of for loops, break, and continue to handle 
-# complex conditions and ensure secure password validation. Happy coding!
+print(f'Passwrd defisients:\n{'\n'.join(defisient_list)}')
 
 # Quiz.
 # 1. What is the purpose of the continue statement in a for loop?
-#     a) It terminates the loop and exits the loop block.
 #     b) It skips the rest of the loop and moves to the next iteration.
-#     c) It restarts the loop from the beginning.
-#     d) It checks if the loop condition is met.
 
 # 2. In a for loop, the break statement is used to:
-#     a) Skip the current iteration and proceed to the next.
 #     b) Exit the loop and move to the next block of code.
-#     c) Restart the loop from the beginning.
-#     d) None of the above.
 
 # 3. Which of the following statements is true about the for loop in Python?
-#     a) The loop variable can only be a numeric data type.
 #     b) The loop variable can be of any data type.
-#     c) The loop variable is optional.
-#     d) The loop variable is not required in a for loop.
 
 # 4. For the following code snippet, determine the output or the result of the operation:
 #     numbers = [1, 2, 3, 4, 5]
@@ -341,6 +379,7 @@ For example, if n = 5 the series will become 2 + 22 + 222 + 2222 + 22222 = 24690
 #         else:
 #             continue
 #     print(total)
+# =============== 6
 
 # 5. For the following code snippet, determine the output or the result of the operation:
 #     numbers = [10, 20, 30, 40, 50]
@@ -353,49 +392,44 @@ For example, if n = 5 the series will become 2 + 22 + 222 + 2222 + 22222 = 24690
 #         else:
 #             continue
 #     print(total)
+# ============== 60
 
 # 6. What is the value of the var after the for loop completes its execution:
-#     var = 10
-#     for i in range(10):
+# var = 10
+# for i in range(10):
 #         for j in range(2, 10, 1):
 #             if var % 2 == 0:
 #                 continue
 #                 var += 1
 #         var += 1
-#     else:
+# else:
 #         var += 1
-#     print(var)
+# print(var)
 
-#     a) 20
 #     b) 21
-#     c) 10
-#     d) 30
 
 # 7. What is the output of the following range() function:
-#     for num in range(2,-5,-1):
-#         print(num, end=", ")
+    #  for num in range(2,-5,-1):
+    #     print(num, end=", ")
 
-#     a) 2, 1, 0
-#     b) 2, 1, 0, -1, -2, -3, -4, -5
 #     c) 2, 1, 0, -1, -2, -3, -4
 
 # 8. What is the value of x after the following nested for loop completes its execution:
-#     x = 0
-#     for i in range(10):
-#         for j in range(-1, -10, -1):
-#             x += 1
-#             print(x)
+    # x = 0
+    # for i in range(10):
+    #     for j in range(-1, -10, -1):
+    #         x += 1
+    #         print(x)
     
-#     a) 99
 #     b) 90
-#     c) 100
 
 # 9. What is the output of the following nested loop?
-#     for num in range(10, 14):
+#       for num in range(10, 14):
 #         for i in range(2, num):
 #             if num % i == 1:
 #                 print(num)
 #                 break
+# ==== 10, 11, 12, 13
                 
 # 10. What is the output of the following nested loop?
 #     numbers = [10, 20]
@@ -410,34 +444,36 @@ For example, if n = 5 the series will become 2 + 22 + 222 + 2222 + 22222 = 24690
 #     10 Table
 #     20 Chair
 #     20 Table
-#     b)
-#     10 Chair
-#     10 Table
 
 # 11. What is the output of the following loop?
-#     for l in 'Jhon':
+#      for l in 'Jhon':
 #         if l == 'o':
 #             pass
 #         print(l, end=", ")
             
-#     a) J, h, n,
 #     b) J, h, o, n,
 
 # - True or False -
-# True or False: A for loop in Python can be nested within another for loop.
-# True or False: The continue statement is used to immediately exit the loop
+# True : A for loop in Python can be nested within another for loop.
+
+# False: The continue statement is used to immediately exit the loop
 # and terminate the program.
-# True or False: The break statement is used to exit the loop prematurely, 
+
+# True: The break statement is used to exit the loop prematurely, 
 # regardless of whether the loop condition is met.
-# True or False: The break statement is used to skip the rest of the loop and 
+
+# False: The break statement is used to skip the rest of the loop and 
 # move to the next iteration.
-# True or False: The continue statement is used to exit the loop prematurely, 
+
+# False: The continue statement is used to exit the loop prematurely, 
 # regardless of whether the loop condition is met.
-# True or False: Using break is more appropriate when you want to exit the 
+
+# True: Using break is more appropriate when you want to exit the 
 # loop prematurely based on a certain condition, regardless of whether the 
 # loop has completed all iterations. It allows you to terminate the loop early 
 # and continue with the rest of the program.
-# True or False: Using continue is more appropriate when you want to skip the 
+
+# True: Using continue is more appropriate when you want to skip the 
 # current iteration and proceed to the next iteration based on a certain condition, 
 # but you still want to continue the loop.
 # """
