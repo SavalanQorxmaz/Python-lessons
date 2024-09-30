@@ -1,3 +1,5 @@
+from random import randint, choice
+import string
 
 # - For Loops -
 print('''A. Write a program to use the loop to find the factorial of a given number.
@@ -155,67 +157,269 @@ print('''N. Write a for loop to check and print all prime numbers within a given
 
 '''O. Implement a for loop to search for a specific word in a text and replace it with another word.
 '''
+sentence = 'i learn javascript'
+word = 'python'
+replaced_sentence = None
+find = 'javascript'
+length = len(sentence)
+for i in range(length):
+    if sentence.startswith(find, i):
+        replaced_sentence = sentence.replace(find, word)
+        break
+print(replaced_sentence)
+    
+'''P. Write a program that draws the pyramid as:
+Reverse Pyramid
+  ***********     
+   *********
+    *******
+     *****
+      ***
+       *
+'''
+print('Reversed Pyramid')
+for i in range(11, 0, -2):
+    print(f'{('*' * i).center(20)}')
+
+'''Q. Write the shortest program that prints the position and each character of a string.
+'''
+word = 'Python'
+for i, char in enumerate(word):
+    print(f'{i+1}: {char}')
+
+'''R. You have the following dictionary:
+data = {
+    "key1": 80,
+    "key2": 75,
+    "key3": 65,
+    "key4": 85
+}
+Iterate over it and check if any value is less than 80, add the missing points.
+'''
+data = {
+    "key1": 80,
+    "key2": 75,
+    "key3": 65,
+    "key4": 85
+}
+for x in data:
+    if data[x] < 80:
+        print(f'{x}: {data[x]}')
 
 
-# P. Write a program that draws the pyramid as:
-# Reverse Pyramid
-#   ***********     
-#    *********
-#     *******
-#      *****
-#       ***
-#        *
-# Q. Write the shortest program that prints the position and each character of a string.
-# R. You have the following dictionary:
-# data = {
-#     "key1": 80,
-#     "key2": 75,
-#     "key3": 65,
-#     "key4": 85
-# }
+'''S. Copy this code to your file:
+from random import randint
+numbers = [randint(15, 40) for _ in range(5)]
 
-# Iterate over it and check if any value is less than 80, add the missing points.
-# S. Copy this code to your file:
-# from random import randint
-# numbers = [randint(15, 40) for _ in range(5)]
+This gives you a list of 5 random numbers between 15 and 40. Using for loops
+find the max value of that list, and print the list to see values.
+'''
+numbers = [randint(15, 40) for _ in range(5)]
+max_value = numbers[0]
+for x in numbers:
+    if x > max_value:
+        max_value = x
+print(numbers)
+print(f'Max value: {max_value}')
 
-# This gives you a list of 5 random numbers between 15 and 40. Using for loops
-# find the max value of that list, and print the list to see values.
-# T. Use 'numbers' list from Task S. Iterate over it again, and if there is a number
-# between 20 and 25 exit the loop, otherwise print the value.
-# U. Write a Python program to construct the following pattern:
-# * 
-# * * 
-# * * * 
-# * * * * 
-# * * * * * 
-# * * * * 
-# * * * 
-# * * 
-# *
-# V. Write a Python program to count the number of even and odd numbers in a collection of numbers.
-# W. Write a Python program that prints each item and its corresponding type from the following list.
-# [5, True, "Python", (1, 2, 3), [5, 6, 7], 9.99, {"name":"Mark"}]
-# X. Write a Python program that prints all the numbers from 0 to 6 except 3 and 6.
-# Y. Write a Python program that accepts a string and calculates the number of digits and letters.
-# Z. Write a Python program to guess a number between 1 and 9. The program should use 'random' module,
-# give only 3 chances to guess the number. Print 'Congratulations' if you guess and 'Game Over'
-# if you fail.
+'''T. Use 'numbers' list from Task S. Iterate over it again, and if there is a number
+between 20 and 25 exit the loop, otherwise print the value.
+'''
+numbers = [randint(15, 40) for _ in range(5)]
+print(numbers)
+for x in numbers:
+    if 20 <= x <= 25:
+        break
+    print(x)
+
+'''U. Write a Python program to construct the following pattern:
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+'''
+step = 1
+to_right = True
+while step != 0:
+    print('* ' * step)
+    if to_right:
+        step += 1
+    else:
+        step -= 1
+    if step == 5:
+        to_right = False
+    
+
+'''V. Write a Python program to count the number of even and odd numbers in a collection of numbers.
+'''
+numbers = [1, 28, 37, 23, 47, 36, 124, 238, 8]
+odds = 0
+evens = 0
+for x in numbers:
+    if x % 2 == 0:
+        evens +=1
+    else:
+        odds += 1
+print(numbers)
+print(f'evens: {evens}\nodds: {odds}')
+
+'''W. Write a Python program that prints each item and its corresponding type from the following list.
+[5, True, "Python", (1, 2, 3), [5, 6, 7], 9.99, {"name":"Mark"}]
+'''
+lst = [5, True, "Python", (1, 2, 3), [5, 6, 7], 9.99, {"name":"Mark"}]
+for x in lst:
+    print(f'{x} is {type(x)} type')
+
+'''X. Write a Python program that prints all the numbers from 0 to 6 except 3 and 6.
+'''
+for i in range(7):
+    if i == 3 or i == 6:
+        continue
+    print(i)
+
+'''Y. Write a Python program that accepts a string and calculates the number of digits and letters.
+'''
+sentence = 'There are 5 apples and 3 pears'
+digits = 0
+letters = 0
+for x in sentence:
+    if x.isdigit():
+        digits += 1
+    elif x.isalpha():
+        letters += 1
+print(f'Sentence: {sentence}\nDigits: {digits}\nLetters: {letters}')
+
+print('''Z. Write a Python program to guess a number between 1 and 9. The program should use 'random' module,
+give only 3 chances to guess the number. Print 'Congratulations' if you guess and 'Game Over'
+if you fail.
+''')
+# random_number = randint(1, 9)
+# number = None
+# for i in range(3):
+#     correct = False
+#     while not correct:
+#         user_input = input("Enter number: ").strip()
+#         try: 
+#             number = int(user_input) 
+#             if 1 <=number <= 9:
+#                 print(f'Your number is: {number}')
+#                 correct = True
+#             else:
+#                 print(f'wrong diapason {number}')
+#         except:
+#             print(f'Incorrect format: {user_input}')
+#     if random_number == number:
+#         print('Congratulations')
+#     elif i == 2:
+        
+#         print(f'Game over, System number: {random_number}')
+#     else:
+#         print(f'You have {2 - i} chance')
+
 
 # - Chat GPT's Homework -
-# Problem 1: Generate a Series
-# Write a Python program that uses a for loop to generate and print the following 
-# series of numbers: 1, 4, 9, 16, 25, ... up to a given positive integer n. The 
-# series consists of perfect squares.
 
-# Problem 2: Calculate Factorial with a For Loop
-# Write a Python program that calculates the factorial of a given positive integer n 
-# using a for loop. Display the result.
+print('''Problem 1: Generate a Series
+Write a Python program that uses a for loop to generate and print the following 
+series of numbers: 1, 4, 9, 16, 25, ... up to a given positive integer n. The 
+series consists of perfect squares.
+''')
+# number = None
+# correct = False
+# while not correct:
+#     user_input = input("Enter number: ").strip()
+#     try: 
+#         number = int(user_input) 
+#         if number > 0:
+#             print(f'Your number is: {number}')
+#             correct = True
+#         else:
+#                 print(f'Only positibe number')
+#     except:
+#         print(f'Incorrect format: {user_input}')
+# for i in range(number+1):
+#     print(i**2)
 
-# Problem 3: Password Generator
-# Write a Python program that generates a random password consisting of both uppercase 
-# and lowercase letters, digits, and special characters. The password should be of a 
-# specified length n. Use a for loop to create the password.
+'''Problem 2: Calculate Factorial with a For Loop
+Write a Python program that calculates the factorial of a given positive integer n 
+using a for loop. Display the result.
+'''
+# print('Calculate Factorial with a For Loop')
+# number = None
+# correct = False
+# while not correct:
+#     user_input = input("Enter number: ").strip()
+#     try: 
+#         number = int(user_input) 
+#         if number > 0:
+#             print(f'Your number is: {number}')
+#             correct = True
+#         else:
+#                 print(f'Only positibe number')
+#     except:
+#         print(f'Incorrect format: {user_input}')
+# fact = 1
+# for i in range(number + 1, 1, -1):
+#     fact *= i
+# print(fact)
+
+'''Problem 3: Password Generator
+Write a Python program that generates a random password consisting of both uppercase 
+and lowercase letters, digits, and special characters. The password should be of a 
+specified length n. Use a for loop to create the password.
+'''
+print('Password Generator')
+strs = string.printable
+password = [ ]
+lwrs = strs.find('a')
+uprs = strs.find('A')
+spcs = strs.find('!')
+
+digits = [ ]
+uppers = [ ]
+lowers = [ ]
+specs = [ ]
+for i in range(len(strs)-10):
+    if i < lwrs:
+        digits.append(strs[i])
+    elif i < uprs:
+        lowers.append(strs[i])
+    elif i < spcs:
+        uppers.append(strs[i])
+    else:
+        specs.append(strs[i])
+length = 8
+dgt_count = randint(1, length-3)
+length -= dgt_count
+lwr_count = randint(1, length-2)
+length -= lwr_count
+upr_count = randint(1, length-1)
+length -= upr_count
+spc_count = length
+count_dict = {
+    'digits': [dgt_count, digits],
+    'lowers': [lwr_count, lowers],
+    'uppers': [upr_count, uppers],
+    'specs': [spc_count, specs]
+}
+# print(choice(list(count_dict.keys())))
+for i in range(8):
+    char_type = choice(list(count_dict.keys()))
+    # print(char_type)
+    char = choice(count_dict[char_type][1])
+    # print(char)
+    password.append(char)
+    count_dict[char_type][0] -= 1 
+    if count_dict[char_type][0] == 0:
+        del count_dict[char_type]
+# print(count_dict)
+print(f'Password: {''.join(password)}')
+
 
 # Problem 4: Average of Numbers
 # Write a Python program that calculates the average of a list of numbers using a 
