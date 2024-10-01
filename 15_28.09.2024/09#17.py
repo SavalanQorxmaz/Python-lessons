@@ -4,21 +4,21 @@ import string
 # - For Loops -
 print('''A. Write a program to use the loop to find the factorial of a given number.
 ''')
-# number = None
-# correct = False
-# while not correct:
-#     user_input = input("Enter number: ").strip()
-#     try: 
-#         number = int(user_input) 
-#         correct = True 
-#     except:
-#         print(f'Incorrect format: {user_input}')
-# fact = 1
-# step = number
-# while step > 0:
-#     fact *= step
-#     step -= 1
-# print(f'{number}! = {fact}')
+number = None
+correct = False
+while not correct:
+    user_input = input("Enter number: ").strip()
+    try: 
+        number = int(user_input) 
+        correct = True 
+    except:
+        print(f'Incorrect format: {user_input}')
+fact = 1
+step = number
+while step > 0:
+    fact *= step
+    step -= 1
+print(f'{number}! = {fact}')
 
 print('''B. Write a program that uses a for loop to print numbers from 1 to 10. However, 
 if the number is divisible by 3, skip the loop, and if the number is 7, stop the loop.
@@ -81,17 +81,17 @@ else:
 
 print('''I. Generate a multiplication table for a given number using a for loop, e.g., for the number 5, print 5x1, 5x2, ..., 5x10.
 ''')
-# number = None
-# correct = False
-# while not correct:
-#     user_input = input("Enter number: ").strip()
-#     try: 
-#         number = int(user_input)    
-#         correct = True
-#     except:
-#         print(f'Incorrect format: {user_input}')
-# for i in range(number):
-#     print(f'{number} x {i} = {number * i}')
+number = None
+correct = False
+while not correct:
+    user_input = input("Enter number: ").strip()
+    try: 
+        number = int(user_input)    
+        correct = True
+    except:
+        print(f'Incorrect format: {user_input}')
+for i in range(number):
+    print(f'{number} x {i} = {number * i}')
 
 print('''J. Write a for loop to iterate through a string and print each character on a separate line
 with corresponding index.
@@ -136,23 +136,23 @@ print(f'word: {word}, reversed word: {''.join(lst)}')
 
 print('''N. Write a for loop to check and print all prime numbers within a given range (on dynamic user input).
 ''')
-# number = None
-# correct = False
-# while not correct:
-#     user_input = input("Enter number: ").strip()
-#     try: 
-#         number = int(user_input)    
-#         correct = True
-#     except:
-#         print(f'Incorrect format: {user_input}')
-# for i in range(2, number+1):
-#     is_prime = True
-#     for j in range(2, i):
-#         if i % j == 0:
-#             is_prime = False
-#             break
-#     if is_prime:
-#         print(i)
+number = None
+correct = False
+while not correct:
+    user_input = input("Enter number: ").strip()
+    try: 
+        number = int(user_input)    
+        correct = True
+    except:
+        print(f'Incorrect format: {user_input}')
+for i in range(2, number+1):
+    is_prime = True
+    for j in range(2, i):
+        if i % j == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(i)
 
 
 '''O. Implement a for loop to search for a specific word in a text and replace it with another word.
@@ -298,28 +298,28 @@ print('''Z. Write a Python program to guess a number between 1 and 9. The progra
 give only 3 chances to guess the number. Print 'Congratulations' if you guess and 'Game Over'
 if you fail.
 ''')
-# random_number = randint(1, 9)
-# number = None
-# for i in range(3):
-#     correct = False
-#     while not correct:
-#         user_input = input("Enter number: ").strip()
-#         try: 
-#             number = int(user_input) 
-#             if 1 <=number <= 9:
-#                 print(f'Your number is: {number}')
-#                 correct = True
-#             else:
-#                 print(f'wrong diapason {number}')
-#         except:
-#             print(f'Incorrect format: {user_input}')
-#     if random_number == number:
-#         print('Congratulations')
-#     elif i == 2:
+random_number = randint(1, 9)
+number = None
+for i in range(3):
+    correct = False
+    while not correct:
+        user_input = input("Enter number: ").strip()
+        try: 
+            number = int(user_input) 
+            if 1 <=number <= 9:
+                print(f'Your number is: {number}')
+                correct = True
+            else:
+                print(f'wrong diapason {number}')
+        except:
+            print(f'Incorrect format: {user_input}')
+    if random_number == number:
+        print('Congratulations')
+    elif i == 2:
         
-#         print(f'Game over, System number: {random_number}')
-#     else:
-#         print(f'You have {2 - i} chance')
+        print(f'Game over, System number: {random_number}')
+    else:
+        print(f'You have {2 - i} chance')
 
 
 # - Chat GPT's Homework -
@@ -329,44 +329,44 @@ Write a Python program that uses a for loop to generate and print the following
 series of numbers: 1, 4, 9, 16, 25, ... up to a given positive integer n. The 
 series consists of perfect squares.
 ''')
-# number = None
-# correct = False
-# while not correct:
-#     user_input = input("Enter number: ").strip()
-#     try: 
-#         number = int(user_input) 
-#         if number > 0:
-#             print(f'Your number is: {number}')
-#             correct = True
-#         else:
-#                 print(f'Only positibe number')
-#     except:
-#         print(f'Incorrect format: {user_input}')
-# for i in range(number+1):
-#     print(i**2)
+number = None
+correct = False
+while not correct:
+    user_input = input("Enter number: ").strip()
+    try: 
+        number = int(user_input) 
+        if number > 0:
+            print(f'Your number is: {number}')
+            correct = True
+        else:
+                print(f'Only positibe number')
+    except:
+        print(f'Incorrect format: {user_input}')
+for i in range(number+1):
+    print(i**2)
 
 '''Problem 2: Calculate Factorial with a For Loop
 Write a Python program that calculates the factorial of a given positive integer n 
 using a for loop. Display the result.
 '''
-# print('Calculate Factorial with a For Loop')
-# number = None
-# correct = False
-# while not correct:
-#     user_input = input("Enter number: ").strip()
-#     try: 
-#         number = int(user_input) 
-#         if number > 0:
-#             print(f'Your number is: {number}')
-#             correct = True
-#         else:
-#                 print(f'Only positibe number')
-#     except:
-#         print(f'Incorrect format: {user_input}')
-# fact = 1
-# for i in range(number + 1, 1, -1):
-#     fact *= i
-# print(fact)
+print('Calculate Factorial with a For Loop')
+number = None
+correct = False
+while not correct:
+    user_input = input("Enter number: ").strip()
+    try: 
+        number = int(user_input) 
+        if number > 0:
+            print(f'Your number is: {number}')
+            correct = True
+        else:
+                print(f'Only positibe number')
+    except:
+        print(f'Incorrect format: {user_input}')
+fact = 1
+for i in range(number, 1, -1):
+    fact *= i
+print(fact)
 
 '''Problem 3: Password Generator
 Write a Python program that generates a random password consisting of both uppercase 
@@ -421,54 +421,117 @@ for i in range(8):
 print(f'Password: {''.join(password)}')
 
 
-# Problem 4: Average of Numbers
-# Write a Python program that calculates the average of a list of numbers using a 
-# for loop. Prompt the user to enter a list of numbers (comma-separated), and then 
-# compute and display the average.
+'''Problem 4: Average of Numbers
+Write a Python program that calculates the average of a list of numbers using a 
+for loop. Prompt the user to enter a list of numbers (comma-separated), and then 
+compute and display the average.
+'''
+print('Average of Numbers')
+str_list = input('enter a list of numbers (comma-separated): ')
+print(str_list)
+lst = str_list.split()
+print(lst)
+numbers = [ ]
+for x in lst:
+    if x.isdigit():
+        numbers.append(int(x))
+total = 0
+length = len(numbers)
+for x in numbers:
+    total += x
+average = total / length
+print(f'Numbers list: {numbers}\nAverage: {average}')
 
-# Problem 5: Pattern Printing
-# Write a Python program that prints the following pattern using nested for loops:
-# 1
-# 1 2
-# 1 2 3
-# 1 2 3 4
-# 1 2 3 4 5
+'''Problem 5: Pattern Printing
+Write a Python program that prints the following pattern using nested for loops:
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+'''
+print('Problem 5: Pattern Printing')
+lst = []
+for i in range(1, 6):
+    lst.append(str(i))
+    print(' '.join(lst))
 
-# Problem 6: Count Vowels and Consonants
-# Write a Python program that counts the number of vowels and consonants in a given 
-# string. Use a for loop to iterate through the characters of the string and 
-# categorize them as vowels or consonants. Display the counts separately.
 
-# Problem 7: Reverse a List
-# Write a Python program that takes a list as input and uses a for loop to reverse 
-# the order of elements in the list. Display the reversed list.
+'''Problem 6: Count Vowels and Consonants
+Write a Python program that counts the number of vowels and consonants in a given 
+string. Use a for loop to iterate through the characters of the string and 
+categorize them as vowels or consonants. Display the counts separately.
+'''
+print('Problem 6: Count Vowels and Consonants')
+vowels = ''.join(['a', 'i', 'o', 'u', 'e'])
+print(f'Vowels: {vowels} ')
+sentence = input('Sentence or word: ').strip().lower()
+vowel_count = 0
+constant_count = 0
+for x in sentence:
+    if  not x.isalpha():
+        continue
+    else:
+        if x in vowels:
+            vowel_count += 1
+        else:
+            constant_count += 1
+print(f'Vowels: {vowel_count}\nConstants: {constant_count}')
 
-# Problem 8: Finding Factors
-# Write a Python program that prompts the user to enter a positive integer and 
-# then finds and prints all the factors of that integer using a for loop.
+'''Problem 7: Reverse a List
+Write a Python program that takes a list as input and uses a for loop to reverse 
+the order of elements in the list. Display the reversed list.
+'''
+print('Problem 7: Reverse a List')
+user_input = input('enter a list (comma-separated): ')
+lst = user_input.split()
+print(f'List: {lst}')
+length = len(lst)
+for i in range(length // 2):
+    temp = lst[i]
+    lst[i] = lst[length-1-i]
+    lst[length-1-i] = temp
+print(f'reversed list: {lst}')
+
+
+'''Problem 8: Finding Factors
+Write a Python program that prompts the user to enter a positive integer and 
+then finds and prints all the factors of that integer using a for loop.
+'''
+print('Problem 8: Finding Factors')
+correct = False
+number = None
+factor_list = [ ]
+while not correct:
+    user_input = input('Positive number: ')
+    if user_input.isdigit():
+        number = int(user_input)  
+        correct = True
+        break
+    else:
+        print('Only Positive number')
+for i in range(1, number+1):
+    if number % i == 0:
+        factor_list.append(i)
+print(factor_list)
+length = len(factor_list)
+for i in range(length // 2):
+    print(f'{number} = {factor_list[i]} x {factor_list[length-1-i]}')
+
 
 '''
 Quiz.
 1. How do you terminate a 'for' loop prematurely in Python?
     a) Using 'break'
-    b) Using 'continue'
-    c) Using 'return'
 
 2. What is the syntax for a 'for' loop in Python?",
-    a. for (var i = 0; i < 5; i++)
     b. for i in range(5)
-    c. while i < 5
 
 3. Which statement is used to skip the current iteration and continue to the next 
 in a 'for' loop?
-    a) 'pass'
-    b) 'break'
     c) 'continue'
 
 4. What is the maximum number of times a 'for' loop can iterate?",
-    a) 100
-    b) 1000
-    c) It depends on the specific code
     d) There is no maximum limit
 
 5. Which data types can be iterated over using a 'for' loop in Python?
@@ -477,7 +540,5 @@ in a 'for' loop?
     c) Dictionaries and sets
 
 6. In a 'for' loop, how can you access both the index and value of each element in a list?
-    a) Use a while loop instead 
     b) Use the enumerate() function
-    c) Manually calculate the index
 '''

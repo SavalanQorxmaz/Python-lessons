@@ -25,6 +25,8 @@ winner = ''
 allow_cells = [str(i) for i in range(1, 10)]
 finish = False
 while not finish:
+    # print(chr(27) + "[2J")
+    os.system('cls')
     for x in matrix:
         print('|'.join(x))
     isempty = False
@@ -49,7 +51,6 @@ while not finish:
             finish = True
             break
     
-    print(chr(27) + "[2J")
     # time.sleep(0.5)
 for x in matrix:
     print('|'.join(x))    
