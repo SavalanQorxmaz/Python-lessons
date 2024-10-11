@@ -1,9 +1,17 @@
-def average_f(*numbers):
-    total = sum(numbers)
-    count = len(numbers)
-    return total / count
+# Docstring
+def convert_currency(currency, amount, azn=1.7):
+    """
+    This function is supposed to convert
+    the definite amount of money and transfer
+    it ot P-Diddy
+    """
+    total = amount * azn
+    result = total / currency
+    return result
 
-numbers_lst = [1, 5, 7, 19, 23, 37]
+print(convert_currency.__doc__)
 
-average_numbers = average_f(*numbers_lst)
-print(average_numbers)
+class Human:
+    """This class is designed for human creations."""
+
+print(Human.__doc__)
