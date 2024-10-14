@@ -1,5 +1,11 @@
 import logging
 import math
+import time
+import datetime
+import re
+import lorem_text
+import lorem_text.lorem
+import random
 
 logging.basicConfig(
     level=logging.NOTSET, 
@@ -80,64 +86,397 @@ floats_round0 = list(map(round0, floats))
 info(floats_round2)
 info(floats_round0)
 
-# H. Write a function that takes a list of prices and uses map() to apply a discount percentage to each price.
-# I. Implement a function that takes a list of sentences and uses map() to encrypt each sentence using 
-# a simple encryption algorithm.
-# J. Create a function that takes a list of words and uses map() to count the number of vowels in each word.
-# K. Write a function that takes a list of strings and uses map() to return a list of lengths for each string.
+'''H. Write a function that takes a list of prices and uses map() to apply a discount percentage to each price.
+'''
+prices = [25, 70, 90, 34, 62, 80]
+def discount_f(lst: list, discount: int) -> map:
+    return map(lambda x: x * (100-discount) / 100, lst)
+discounted_price = list(discount_f(prices, 20))
+info(discounted_price)
+
+
+'''I. Implement a function that takes a list of sentences and uses map() to encrypt each sentence using 
+a simple encryption algorithm.
+'''
+def encrypt_algoritm(sentence):
+    result = ''
+    for char in sentence:
+        new_ord = ord(char) + 11
+        length = len(str(new_ord))
+        rest = 4 - length
+        result += f'{'0'*rest}{str(new_ord)}'
+    return result
+sentences = ['salam, necesen', 'tesekkur', 'hellow world']
+encrypted_sentences = list(map(encrypt_algoritm, sentences))
+info(encrypted_sentences)
+
+
+'''J. Create a function that takes a list of words and uses map() to count the number of vowels in each word.
+'''
+def calculate_vowels_count(text):
+    count = 0
+    vowels = 'aioue'
+    length = len(text)
+    while length > 0:
+        if text[length-1] in vowels:
+            count +=1
+        length -=1
+    return count
+words = ['hello', 'text', 'sentence', 'vowels', 'list-tuple']
+vowels_list = list(map(calculate_vowels_count, words))
+info(vowels_list)
+
+'''K. Write a function that takes a list of strings and uses map() to return a list of lengths for each string.
+'''
+def calculate_text_length(text:str) -> int:
+    return len(text)
+words = ['hello', 'text', 'sentence', 'vowels', 'list-tuple']
+words_length_list = list(map(calculate_text_length, words))
+info (words_length_list)
 
 # - Filter -
-# A. Create a function that takes a list of numbers and uses the filter() function to 
-# return a new list containing only the even numbers.
-# B. Write a function that takes a list of numbers and uses the filter() function to 
-# return a new list containing only the prime numbers.
-# C. Implement a function that filters a list of strings to return a new tuple containing 
-# only the words that are palindromes.
-# D. Given a list of dictionaries representing employees and their salaries, use filter() 
-# to create a new list of employees whose salary is above a specified threshold.
-# E. Write a function that takes a list of file names and filters it to return a new list 
-# containing only files with a specified file extension.
-# F. Create a function that takes a dictionary of student names and their corresponding grades, 
-# and uses filter() to return a new dictionary containing only students who passed (grades above 
-# a certain threshold).
-# G. Implement a function that takes a mixed list of data types (integers, strings, floats) and 
-# filters it to return separate lists for each data type.
-# H. Prompt the user to enter a condition, then use the filter() function to filter a given list 
-# of numbers based on the user-provided condition.
-# I. Write a function that takes a list of strings and filters it to return a new list containing 
-# only strings that contain a specific substring.
-# J. Implement a function that takes a list of strings and filters it to return a new list containing 
-# strings with a specified character appearing a certain number of times.
-# K. Create a function that takes a list of integers and uses the filter() function to return a 
-# new list containing only those numbers for which a specified mathematical function (e.g., square, 
-# cube) yields a prime result.
-# L. Write a function that takes a list of date objects and filters it to return a new list containing 
-# dates within a specified range.
-# M. Given a list of cities and their corresponding countries, use filter() to return a new list 
-# containing cities from a specific country.
-# N. Create a function that takes a list of product objects and uses the filter() function to return a 
-# new list containing only available products.
-# O. Implement a function that takes a list and uses filter() to return a new list containing only 
-# the unique elements.
-# P. Write a function that takes a list of words and filters it to return a new list containing only 
-# anagrams of a specified word.
-# Q. Given a list of numeric data, use filter() to return a new list containing elements within a 
-# specified range.
-# R. Create a function that takes a list of strings and uses filter() to return a new list containing 
-# only strings that match a specific regular expression.
+'''A. Create a function that takes a list of numbers and uses the filter() function to 
+return a new list containing only the even numbers.
+'''
+numbers = [1, 34, 56, 7, 89, 98, 43, 0, 23, 45]
+even_numbers = tuple(filter(lambda x: x % 2 == 0, numbers))
+info(even_numbers)
+
+'''B. Write a function that takes a list of numbers and uses the filter() function to 
+return a new list containing only the prime numbers.
+'''
+def check_if_number_prime(number):
+    length = round(number**0.5)
+    for i in range(2, length + 1):
+        if number % i == 0:
+            return False
+    else:
+        return True
+numbers = [1, 34, 56, 7, 89, 98, 43, 0, 23, 45]
+prime_numbers = list(filter(check_if_number_prime, numbers))
+info(prime_numbers)
+
+'''C. Implement a function that filters a list of strings to return a new tuple containing 
+only the words that are palindromes.
+'''
+def check_if_palindrome(text:str) -> bool:
+    text = text.strip().lower()
+    length = len(text)
+    for i in range(length // 2):
+        if text[i] != text[-i - 1]:
+            return False
+    return True
+words = ['hello', 'bob', 'world', 'radar']
+palindromes = tuple(filter(check_if_palindrome, words))
+info(palindromes)            
+
+'''D. Given a list of dictionaries representing employees and their salaries, use filter() 
+to create a new list of employees whose salary is above a specified threshold.
+'''
+employees = {
+    'bob': 3000,
+    'jack': 1200,
+    'lucy': 1600,
+    'jenifer': 2800
+}
+def check_high_salary(employee) -> bool:
+    if  employee[1] > 2000:
+        return True
+    return False
+high_salary_employee = dict(filter(check_high_salary, employees.items()))
+info(high_salary_employee)
+
+'''E. Write a function that takes a list of file names and filters it to return a new list 
+containing only files with a specified file extension.
+'''
+def check_file_extension(name: str) -> bool:
+    name_list = name.split('.')
+    if name_list[-1] == 'txt':
+        return True
+    return False
+file_list = ['test.txt', 'run.exe', 'list.txt', 'spool.bat']
+txt_files = list(filter(check_file_extension, file_list))
+info(txt_files)
+
+'''F. Create a function that takes a dictionary of student names and their corresponding grades, 
+and uses filter() to return a new dictionary containing only students who passed (grades above 
+a certain threshold).
+'''
+students = {
+    'Ali': 75,
+    'Hasan': 38,
+    'Lale': 52,
+    'Nigar': 90,
+    'Leman':21
+}
+def check_if_student_passed(student):
+    if student[1] > 50:
+        return True
+    return False
+passed_student = dict(filter(check_if_student_passed, students.items()))
+info(passed_student)
+
+'''G. Implement a function that takes a mixed list of data types (integers, strings, floats) and 
+filters it to return separate lists for each data type.
+'''
+def check_data_type(dt):
+    return lambda x: dt == type(x)
+mix = [1, 'a', True, (1, 2), 34, False]
+check_bool = check_data_type(bool)
+check_int = check_data_type(int)
+info(list(filter(check_bool, mix)))
+info(list(filter(check_int, mix)))
+
+'''H. Prompt the user to enter a condition, then use the filter() function to filter a given list 
+of numbers based on the user-provided condition.
+'''
+
+# try:
+#     user_input = input('enter condition (>100, < 50, =25 etc.): ')
+#     condition = None
+#     for x in user_input:
+#         if x in '<>=':
+#             condition = x
+#             break
+#     else:
+#         logging.error('Not any condition')
+#     digits ='0123456789'
+#     index = -1
+#     number = None
+#     for i, x in enumerate(user_input):
+#         if x in digits:
+#             index = i
+#             number = x
+#             for j in range(index + 1, len(user_input)):
+#                 if user_input[j] in digits:
+#                     number += user_input[j]
+#                 else:
+#                     break
+#             break
+#     else:
+#         logging.error('Not any digit')
+             
+# except TypeError as err:
+#     logging.error(err)
+
+# def check_user_condition(condition, limit):
+#     try:
+#         limit = int(limit)
+#         if condition == '=':
+#             return lambda x: x == limit
+#         elif condition == '<':
+#             return lambda x: x < limit
+#         elif condition == '>':
+#             return lambda x: x > limit
+#         else:
+#             return lambda x: True
+#     except TypeError:
+#         logging.error('no number')
+#         return lambda x: True
+# user_condition = check_user_condition(condition, number)
+
+# numbers = [1, 23, 45, 89, 100, 23, 45, 900, 678, 5, 43, 56, 456]
+
+# user_list = list(filter(user_condition, numbers))
+# info(user_list)
+
+'''I. Write a function that takes a list of strings and filters it to return a new list containing 
+only strings that contain a specific substring.
+'''
+strings = ['hello', 'below', 'world', 'low']
+def check_if_has_substring(substring: str) -> bool:
+    return lambda x: substring in x
+sub_lo = check_if_has_substring('lo')
+sublist = list(filter(sub_lo, strings))
+info(sublist)
+
+'''J. Implement a function that takes a list of strings and filters it to return a new list containing 
+strings with a specified character appearing a certain number of times.
+'''
+strings = ['hello', 'below', 'world', 'low', 'killer']
+def check_if_has_char(char: str) -> bool:
+    return lambda x: x.count(char) > 1
+sub_lo = check_if_has_char('l')
+sublist = list(filter(sub_lo, strings))
+info(sublist)
+
+'''K. Create a function that takes a list of integers and uses the filter() function to return a 
+new list containing only those numbers for which a specified mathematical function (e.g., square, 
+cube) yields a prime result.
+'''
+numbers = range(0, 100)
+def check_math_func(func):
+    return lambda x: func(x)
+def square_f(number):
+    return round(number**0.5) == number**0.5
+def cube_f(number):
+    return round(number**(1/3)) == number**(1/3)
+
+cube_func = check_math_func(cube_f)
+square_func = check_math_func(square_f)
+cube_list = list(filter(cube_func, numbers))
+square_list = list(filter(square_func, numbers))
+info(cube_list)
+info(square_list)
+
+'''L. Write a function that takes a list of date objects and filters it to return a new list containing 
+dates within a specified range.
+'''
+startdate = datetime.datetime(2023, 1, 1)
+enddate = datetime.datetime(2024, 5, 31)
+
+date_list = [(2021, 10, 2), (2024, 10, 1), (2025, 1, 1), (2023, 12, 12), (2023, 12, 31)]
+
+def date_range_f(startdate, enddate):
+    return lambda x: datetime.datetime(*startdate) < datetime.datetime(*x) < datetime.datetime(*enddate)
+custom_range = date_range_f((2023, 1, 1), (2024, 1, 1))
+# print(datetime.datetime(year=2024, month=10, day=1) > datetime.datetime(year=2023, month=10, day=1))
+date_range_list = list(filter(custom_range, date_list))
+info(date_range_list)
+
+
+'''M. Given a list of cities and their corresponding countries, use filter() to return a new list 
+containing cities from a specific country.
+'''
+cities = ['baku:azerbaijan', 'ankara:turkiye', 'ganja:azerbaijan', 'new-york:usa', 'istanbul:turkiye', 'london:britain', 'adana:turkiye']
+
+def find_country(country: str):
+    return lambda x: x.split(':')[1] == country
+find_turkiye = find_country('turkiye')
+turkiyes_cities = list(filter(find_turkiye, cities))
+info(turkiyes_cities)
+
+'''N. Create a function that takes a list of product objects and uses the filter() function to return a 
+new list containing only available products.
+'''
+products = ['sugar', 'tea', 'apple', 'banana', 'pear', 'onion']
+
+sugar = list(filter(lambda x: x== 'sugar', products))
+info(sugar)
+
+
+'''O. Implement a function that takes a list and uses filter() to return a new list containing only 
+the unique elements.
+'''
+lst = ['banana', 'apple', 'onion', 'apple', 'pear', 'kiwi', 'banana']
+unions_list = list(filter(lambda x: lst.count(x) < 2, lst))
+info(unions_list)
+
+'''P. Write a function that takes a list of words and filters it to return a new list containing only 
+anagrams of a specified word.
+'''
+anagrams = ['post', 'qara', 'kitab']
+words = ['post', 'kitab', 'meyve', 'ayri']
+def find_anagram(word:str) -> bool:
+    try:
+        return anagrams.index(word) > -1
+    except ValueError:
+        return False
+anagram_list = list(filter(find_anagram, words))
+info(anagram_list)
+        
+        
+
+'''Q. Given a list of numeric data, use filter() to return a new list containing elements within a 
+specified range.
+'''
+def check_if_number_in_range(start: int, end: int)-> bool:
+    return lambda x: start < x < end
+numbers = [1, 24, 45, 67, 78, 98, 43, 123, 6, 94, 2]
+
+range_20_50 = check_if_number_in_range(19, 51)
+new_list = list(filter(range_20_50, numbers))
+info(new_list)
+
+'''R. Create a function that takes a list of strings and uses filter() to return a new list containing 
+only strings that match a specific regular expression.
+'''
+lst = ['banana', 'apple', 'onion', 'berry', 'pear', 'kiwi', 'sugar']
+def regex_f(subword):
+    return lambda x: len(re.findall(subword, x)) > 0
+exp = regex_f('ar')
+
+new_list = list(filter(exp, lst))
+info(new_list)
 
 # - Reversed -
-# A. Write a function that takes a list of elements and uses the reversed() function to reverse the 
-# order of elements in the list.
-# B. Create a function that takes a string and uses reversed() to reverse the characters in the string.
-# C. Implement a function that takes a tuple and uses reversed() to reverse the order of elements in the tuple.
-# D. Write a function that takes a sentence and uses reversed() to reverse the order of words in the sentence.
-# E. Create a function that takes a dictionary and uses reversed() to reverse the order of keys and values.
-# F. Implement a function that takes a linked list and uses reversed() to reverse the order of nodes in the linked list.
-# G. Write a function that takes a queue and uses reversed() to reverse the order of elements in the queue.
-# H. Create a function that takes a stack and uses reversed() to reverse the order of elements in the stack.
-# I. Implement a function that takes a list of elements and uses reversed() to reverse the elements at odd 
-# indices, while keeping the elements at even indices unchanged.
+'''A. Write a function that takes a list of elements and uses the reversed() function to reverse the 
+order of elements in the list.
+'''
+lst = [1, 2, 3, 4]
+info(list(reversed(lst)))
+
+'''B. Create a function that takes a string and uses reversed() to reverse the characters in the string.
+'''
+text = 'hello world'
+reversed_text = ''.join(list(reversed(text)))
+info(reversed_text)
+
+'''C. Implement a function that takes a tuple and uses reversed() to reverse the order of elements in the tuple.
+'''
+my_tuple = (('hello', 'world', 'book', 'pen', 'sentence', 'water'))
+reversed_tuple = tuple(reversed(my_tuple))
+info(reversed_tuple)
+
+'''D. Write a function that takes a sentence and uses reversed() to reverse the order of words in the sentence.
+'''
+sentence = lorem_text.lorem.sentence()
+reversed_sentence = reversed(sentence.split())
+info(' '.join(reversed_sentence))
+
+'''E. Create a function that takes a dictionary and uses reversed() to reverse the order of keys and values.
+'''
+my_dict = {
+    'writer': 'Dostoyevski',
+    'fruit': 'apple',
+    'vegetable': 'onion',
+    'number': 2
+}
+reversed_dict = []
+for x in my_dict.items():
+    reversed_dict.append(tuple(reversed(x)))
+    print(x)
+reversed_dict = dict(reversed_dict)
+print(reversed_dict)
+
+'''F. Implement a function that takes a linked list and uses reversed() to reverse the order of nodes in the linked list.
+'''
+order = {
+    1: [2, 4, None],
+    2: [3, None],
+    3: [1, 5, None],
+    4: [5, None],
+    5: [2, None]
+}
+reversed_order = dict(zip(list(reversed(order)), order.values()))
+info(reversed_order)
+
+'''G. Write a function that takes a queue and uses reversed() to reverse the order of elements in the queue.
+'''
+numbers = [1, 25, 45, 67, 78, 98, 43, 123, 6, 94, 2]
+selected = random.choice(numbers)
+index = numbers.index(selected)
+info(index)
+reversed_list = [x for i,x in enumerate(numbers) if i < index] + list(reversed([x for i, x in enumerate(numbers) if i >= index]))
+info(reversed_list)
+    
+
+'''H. Create a function that takes a stack and uses reversed() to reverse the order of elements in the stack.
+'''
+stack = [1, 25, 45, 67, 78, 98, 43, 123, 6, 94, 2]
+reversed_stack = list(reversed(stack))
+info(reversed_stack)
+
+'''I. Implement a function that takes a list of elements and uses reversed() to reverse the elements at odd 
+indices, while keeping the elements at even indices unchanged.
+'''
+numbers = [x for x in range(1, 11)]
+odd_reversed_tuple = list(zip(list(reversed([x for x in numbers if x % 2 != 0])), [x for x in numbers if x % 2 == 0] ))
+odd_reversed = []
+for x in odd_reversed_tuple:
+    odd_reversed.extend(list(x))
+info(odd_reversed)
+
 # J. Write a function that takes a binary number as a string and uses reversed() to reverse the binary digits.
 # K. Create a function that takes a 2D matrix and uses reversed() to reverse the rows of the matrix.
 # L. Implement a function that takes a string and uses reversed() to reverse the characters in each substring 
