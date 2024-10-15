@@ -231,54 +231,54 @@ info(list(filter(check_int, mix)))
 of numbers based on the user-provided condition.
 '''
 
-# try:
-#     user_input = input('enter condition (>100, < 50, =25 etc.): ')
-#     condition = None
-#     for x in user_input:
-#         if x in '<>=':
-#             condition = x
-#             break
-#     else:
-#         logging.error('Not any condition')
-#     digits ='0123456789'
-#     index = -1
-#     number = None
-#     for i, x in enumerate(user_input):
-#         if x in digits:
-#             index = i
-#             number = x
-#             for j in range(index + 1, len(user_input)):
-#                 if user_input[j] in digits:
-#                     number += user_input[j]
-#                 else:
-#                     break
-#             break
-#     else:
-#         logging.error('Not any digit')
+try:
+    user_input = input('enter condition (>100, < 50, =25 etc.): ')
+    condition = None
+    for x in user_input:
+        if x in '<>=':
+            condition = x
+            break
+    else:
+        logging.error('Not any condition')
+    digits ='0123456789'
+    index = -1
+    number = None
+    for i, x in enumerate(user_input):
+        if x in digits:
+            index = i
+            number = x
+            for j in range(index + 1, len(user_input)):
+                if user_input[j] in digits:
+                    number += user_input[j]
+                else:
+                    break
+            break
+    else:
+        logging.error('Not any digit')
              
-# except TypeError as err:
-#     logging.error(err)
+except TypeError as err:
+    logging.error(err)
 
-# def check_user_condition(condition, limit):
-#     try:
-#         limit = int(limit)
-#         if condition == '=':
-#             return lambda x: x == limit
-#         elif condition == '<':
-#             return lambda x: x < limit
-#         elif condition == '>':
-#             return lambda x: x > limit
-#         else:
-#             return lambda x: True
-#     except TypeError:
-#         logging.error('no number')
-#         return lambda x: True
-# user_condition = check_user_condition(condition, number)
+def check_user_condition(condition, limit):
+    try:
+        limit = int(limit)
+        if condition == '=':
+            return lambda x: x == limit
+        elif condition == '<':
+            return lambda x: x < limit
+        elif condition == '>':
+            return lambda x: x > limit
+        else:
+            return lambda x: True
+    except TypeError:
+        logging.error('no number')
+        return lambda x: True
+user_condition = check_user_condition(condition, number)
 
-# numbers = [1, 23, 45, 89, 100, 23, 45, 900, 678, 5, 43, 56, 456]
+numbers = [1, 23, 45, 89, 100, 23, 45, 900, 678, 5, 43, 56, 456]
 
-# user_list = list(filter(user_condition, numbers))
-# info(user_list)
+user_list = list(filter(user_condition, numbers))
+info(user_list)
 
 '''I. Write a function that takes a list of strings and filters it to return a new list containing 
 only strings that contain a specific substring.
@@ -477,262 +477,337 @@ for x in odd_reversed_tuple:
     odd_reversed.extend(list(x))
 info(odd_reversed)
 
-# J. Write a function that takes a binary number as a string and uses reversed() to reverse the binary digits.
-# K. Create a function that takes a 2D matrix and uses reversed() to reverse the rows of the matrix.
-# L. Implement a function that takes a string and uses reversed() to reverse the characters in each substring 
-# separated by a specific delimiter.
+'''J. Write a function that takes a binary number as a string and uses reversed() to reverse the binary digits.
+'''
+def reverse_binary(binary: str):
+    binary_split = [x for x in binary]
+    result = reversed(binary_split)
+    return ''.join(list(result))
+info(reverse_binary('11010'))
+
+'''K. Create a function that takes a 2D matrix and uses reversed() to reverse the rows of the matrix.
+'''
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+def reverse_matrix(matrix:list[list]):
+    for i, x in enumerate(matrix):
+        matrix[i] = list(reversed(x))
+    return matrix
+info(reverse_matrix(matrix))
+    
+
+'''L. Implement a function that takes a string and uses reversed() to reverse the characters in each substring 
+separated by a specific delimiter.
+'''
+string = 'Veritatis tenetur facere nesciunt dolor, voluptatem consequuntur blanditiis dignissimos dolore error'
+substring = 'dolor'
+def reverse_substring(sentence: str, word: str):
+    reversed_word = ''.join(reversed(word))
+    reversed_string = re.sub(word, reversed_word, string)
+    return reversed_string
+info(reverse_substring(string, substring))
 
 # - Sorted -
-# A. Write a function that takes a list of numbers and uses the sorted() function to return a new list with 
-# the numbers sorted in ascending order.
-# B. Create a function that takes a list of numbers and uses the sorted() function to return a new list with 
-# the numbers sorted in descending order.
-# C. Implement a function that takes a list of strings and uses the sorted() function to return a new list 
-# with the strings sorted by their lengths.
-# D. Write a function that takes a list of tuples and uses the sorted() function to return a new list with 
-# the tuples sorted based on their second element.
-# E. Create a function that takes a dictionary and uses the sorted() function to return a new dictionary 
-# with its items sorted by their values.
-# F. Implement a function that takes a list of strings and uses the sorted() function to return a new list 
-# with the strings sorted in a case-insensitive manner.
-# G. Write a function that takes a list of custom objects and uses the sorted() function to return a new list 
-# with the objects sorted based on a specified attribute.
-# H. Create a function that takes a list of date objects and uses the sorted() function to return a new list 
-# with the dates sorted in chronological order.
-# I. Implement a function that takes a list of lists and uses the sorted() function to return a new list with 
-# the lists sorted based on the sum of their elements.
-# J. Write a function that takes a list of integers and uses the sorted() function to return a new list with 
-# the integers sorted based on the number of factors they have.
-# K. Create a function that takes a list of strings and uses the sorted() function to return a new list with 
-# the strings sorted based on their last characters.
-# L. Implement a function that takes a list of dictionaries and uses the sorted() function to return a new list 
-# with the dictionaries sorted based on their keys.
-# M. Sort the following list of strings alphabetically by the second letter:
-# string_list = ["Hello", "World", "Python", "Programming", "Example", "String", "List", "ChatGPT"]
+'''A. Write a function that takes a list of numbers and uses the sorted() function to return a new list with 
+the numbers sorted in ascending order.
+'''
+numbers = [1, 25, 45, 67, 78, 98, 43, 123, 6, 94, 2]
+sorted_numbers = sorted(numbers, reverse=False)
+info(sorted_numbers)
 
-# Quiz.
-# 1. What is the purpose of the filter() function in Python?
-#     A) To remove elements from an iterable based on a given condition
-#     B) To sort elements in an iterable
-#     C) To modify elements in an iterable
-#     D) To combine elements in an iterable
+'''B. Create a function that takes a list of numbers and uses the sorted() function to return a new list with 
+the numbers sorted in descending order.
+'''
+def f_sort_descending(lst: list) -> list:
+    return sorted(lst, reverse=True)
+numbers = [1, 25, 45, 67, 78, 98, 43, 123, 6, 94, 2]
+info(f_sort_descending(numbers))
 
-# 2. Which of the following data types can the filter() function be applied to?
-#     A) Lists
-#     B) Strings
-#     C) Tuples
-#     D) All of the above
+'''C. Implement a function that takes a list of strings and uses the sorted() function to return a new list 
+with the strings sorted by their lengths.
+'''
+def f_sort_by_length(strings: list) -> list:
+    def f_key(word):
+        return len(word)
+    return sorted(strings, key=f_key)
+strings = 'Implement a function that takes a list of strings and uses the'.split()
+info(f_sort_by_length(strings))
 
-# 3. What does the filter() function return?
-#     A) A new iterable containing filtered elements
-#     B) The original iterable with filtered elements
-#     C) A list of filtered elements
-#     D) A tuple of filtered elements
+'''D. Write a function that takes a list of tuples and uses the sorted() function to return a new list with 
+the tuples sorted based on their second element.
+'''
+def f_sort_tuple_second_element(lst:list) -> list:
+    def f_tuple_second_element(tup: tuple)-> tuple:
+        return tup[1]
+    return sorted(lst, key=f_tuple_second_element)
+tuples = [(1, 9), (2, 8), (3, 7), (4, 6)]
+info(f_sort_tuple_second_element(tuples))
 
-# 4. Which parameter does the filter() function take?
-#     A) A filter function
-#     B) An iterable
-#     C) Both A and B
-#     D) Neither A nor B
 
-# 5. In the context of the filter() function, what does the filter function do?
-#     A) Defines the condition for filtering elements
-#     B) Specifies the data type of the iterable
-#     C) Sorts the iterable elements
-#     D) Combines the iterable elements
+'''E. Create a function that takes a dictionary and uses the sorted() function to return a new dictionary 
+with its items sorted by their values.
+'''
 
-# 6. Which of the following statements is true about the filter() function?
-#     A) The filter function can only return True or False
-#     B) The filter function can return any data type
-#     C) The filter function must return a boolean
-#     D) The filter function is not required
+def f_sort_by_value(dictionary: dict) -> dict:
+    return lambda x: dictionary.get(x)
+my_dict = {
+    'a':134,
+    'b': 243,
+    'c': 37,
+    'd': 49
+}
+get_value = f_sort_by_value(my_dict)
 
-# 7. What is the syntax for using the filter() function in Python?
-#     A) filter(condition, iterable)
-#     B) filter(iterable, condition)
-#     C) filter(function, iterable)
-#     D) filter(iterable, function)
+sorted_keys = sorted(my_dict, key=get_value)
+sorted_dict = {}
+for x in sorted_keys:
+    sorted_dict.update({x: my_dict.get(x)})
+info(sorted_dict)
 
-# 8. When using the filter() function, what happens if the filter function returns False for an element?
-#     A) The element is removed from the iterable
-#     B) The element is included in the iterable
-#     C) An error is raised
-#     D) None of the above
+'''F. Implement a function that takes a list of strings and uses the sorted() function to return a new list 
+with the strings sorted in a case-insensitive manner.
+'''
+def f_sort_by_word(lst: list)-> list:
+    ins_word = lambda x: x.lower()
+    return sorted(lst, key=ins_word)
+sentence = 'Implement a function that takes a List of strings and Uses'
+strings = sentence.split()
+info(f_sort_by_word(strings))
 
-# 9. Can the filter() function be used to filter elements based on multiple conditions?
-#     A) Yes
-#     B) No
 
-# 10. In Python 3, what does the filter() function return by default?
-#     A) A filter object
-#     B) A list of filtered elements
-#     C) A tuple of filtered elements
-#     D) A set of filtered elements
+'''G. Write a function that takes a list of custom objects and uses the sorted() function to return a new list 
+with the objects sorted based on a specified attribute.
+'''
+objects = [
+    {
+        'name': 'Fatma',
+        'surname': 'Aliyeva',
+        'age': 40
+    },
+     {
+        'name': 'Fatima',
+        'surname': 'Valiyeva',
+        'age': 25
+    },
+      {
+        'name': 'Leman',
+        'surname': 'Agayeva',
+        'age': 18
+    },
+       {
+        'name': 'Sabina',
+        'surname': 'Hasanova',
+        'age': 30
+    }
+]
 
-# 11. What is the purpose of the map() function in Python?
-#     A) To apply a given function to each item in an iterable
-#     B) To filter elements from an iterable based on a given condition
-#     C) To sort elements in an iterable
-#     D) To combine elements in an iterable
+def f_sort_data_by_age(obj:dict)-> dict:
+    return_age = lambda x: x.get('age')
+    sorted_dict = sorted(obj, key=return_age)
+        
+    return sorted_dict
+info(f_sort_data_by_age(objects))
 
-# 12. Which of the following is an iterable that can be passed to the map() function?
-#     A) Lists
-#     B) Strings
-#     C) Tuples
-#     D) All of the above
+'''H. Create a function that takes a list of date objects and uses the sorted() function to return a new list 
+with the dates sorted in chronological order.
+'''
+dates = [(2024, 10, 10), (1989, 10, 5), (2050, 3, 8), (2000, 12, 31), (2000, 11, 30)]
+def f_sort_by_date(lst: list)-> list:
+    date_data = lambda x: datetime.datetime(*x)
+    sorted_dates = sorted(lst, key=date_data)
+    return sorted_dates
+info(f_sort_by_date(dates))
 
-# 13. What does the map() function return?
-#     A) A new iterable containing transformed elements
-#     B) The original iterable with transformed elements
-#     C) A list of transformed elements
-#     D) A tuple of transformed elements
+'''I. Implement a function that takes a list of lists and uses the sorted() function to return a new list with 
+the lists sorted based on the sum of their elements.
+'''
+lsts = [
+    [1, 2, 3, 4, 5],
+    [1, 2],
+    [1, 2, 3, 4, 5, 6, 7],
+    [1, 2, 3],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
+    [1]
+]
+def sort_by_list_length(lst: list) -> list:
+    lst_length = lambda x: len(x)
+    sorted_list = sorted(lst, key=lst_length)
+    return sorted_list
+info(sort_by_list_length(lsts))
 
-# 14. What parameters does the map() function take?
-#     A) A mapping function and an iterable
-#     B) A single iterable
-#     C) A single mapping function
-#     D) A mapping function, followed by one or more iterables
+'''J. Write a function that takes a list of integers and uses the sorted() function to return a new list with 
+the integers sorted based on the number of factors they have.
+'''
+def f_factors_count(number: int) -> int:
+    count = 2 # 1-e ve ozune bolunur
+    for x in range(2, number // 2 + 1):
+        if number % x == 0:
+            count += 1
+    return count 
+numbers = [23, 345, 2, 5678, 987, 34, 987654, 76, 432]
+def f_sort_by_factors_count(lst: list) -> list:
+    return sorted(lst, key=f_factors_count)
+info(f_sort_by_factors_count(numbers))
 
-# 15. In the context of the map() function, what does the mapping function do?
-#     A) Defines the transformation to be applied to each element
-#     B) Specifies the data type of the iterable
-#     C) Sorts the iterable elements
-#     D) Combines the iterable elements
+'''K. Create a function that takes a list of strings and uses the sorted() function to return a new list with 
+the strings sorted based on their last characters.
+'''
+def f_sort_by_last_char(lst:list) -> list:
+    return_last_char = lambda x: x[-1]
+    return sorted(lst, key=lambda x: x[-1])
+strings = 'strings sorted based on their last characters'.split()
+info(f_sort_by_last_char(strings))
 
-# 16. Which of the following is true about the map() function?
-#     A) The mapping function can return any data type
-#     B) The mapping function must return a boolean
-#     C) The mapping function is not required
-#     D) The mapping function must return an integer
+'''L. Implement a function that takes a list of dictionaries and uses the sorted() function to return a new list 
+with the dictionaries sorted based on their keys.
+'''
+def f_sort_by_key(dictionary: dict) -> dict:
+    sorted_keys = sorted(dictionary)
+    sorted_dict = {}
+    for x in sorted_keys:
+        sorted_dict.update({x: dictionary.get(x) })
+    return sorted_dict
+my_dict = {
+    'w':134,
+    'b': 243,
+    'k': 37,
+    'a': 49
+}
 
-# 17. What is the syntax for using the map() function in Python?
-#     A) map(mapping_function, iterable)
-#     B) map(iterable, mapping_function)
-#     C) map(function, iterable)
-#     D) map(iterable, function)    
+info(f_sort_by_key(my_dict))
 
-# 18. When using the map() function, what happens if the mapping function returns None for an element?
-#     A) The element is removed from the iterable
-#     B) The element remains unchanged in the iterable
-#     C) An error is raised
-#     D) None of the above
+'''M. Sort the following list of strings alphabetically by the second letter:
+string_list = ["Hello", "World", "Python", "Programming", "Example", "String", "List", "ChatGPT"]
+'''
+string_list = ["Hello", "World", "Python", "Programming", "Example", "String", "List", "ChatGPT"]
 
-# 19. Can the map() function be used to transform elements from multiple iterables?
-#     A) Yes
-#     B) No
+find_second_letter = lambda x: x[1]
+info(sorted(string_list, key=find_second_letter))
 
-# 20. In Python 3, what does the map() function return by default?
-#     A) A map object
-#     B) A list of transformed elements
-#     C) A tuple of transformed elements
-#     D) A set of transformed elements
+'''Quiz.
+1. What is the purpose of the filter() function in Python?
+    A) To remove elements from an iterable based on a given condition
 
-# 21. What is the purpose of the reversed() function in Python?
-#     A) To reverse the order of elements in an iterable
-#     B) To sort elements in an iterable
-#     C) To remove elements from an iterable
-#     D) To concatenate elements in an iterable
+2. Which of the following data types can the filter() function be applied to?
+    D) All of the above
 
-# 22. Which of the following is an iterable that can be passed to the reversed() function?
-#     A) Lists
-#     B) Strings
-#     C) Tuples
-#     D) All of the above
+3. What does the filter() function return?
+    A) A new iterable containing filtered elements
 
-# 23. What does the reversed() function return?
-#     A) A new iterable containing reversed elements
-#     B) The original iterable with reversed elements
-#     C) A list of reversed elements
-#     D) A tuple of reversed elements
+4. Which parameter does the filter() function take?
+    C) Both A and B
 
-# 24. What parameter does the reversed() function take?
-#     A) An iterable
-#     B) A single element
-#     C) A number
-#     D) A mapping function
+5. In the context of the filter() function, what does the filter function do?
+    A) Defines the condition for filtering elements
 
-# 25. In the context of the reversed() function, what does "reversed elements" mean?
-#     A) The elements are in the opposite order
-#     B) The elements are sorted in ascending order
-#     C) The elements are concatenated
-#     D) The elements are multiplied
+6. Which of the following statements is true about the filter() function?
+    A) The filter function can only return True or False
 
-# 26. Which of the following is true about the reversed() function?
-#     A) The reversed elements are returned as a list
-#     B) The reversed elements are returned as a tuple
-#     C) The reversed elements are returned as an iterator
-#     D) The reversed elements are returned as a set
+7. What is the syntax for using the filter() function in Python?
+    D) filter(iterable, function)
 
-# 27. What is the syntax for using the reversed() function in Python?
-#     A) reversed(iterable)
-#     B) iterable.reversed()
-#     C) reversed(function, iterable)
-#    D) reversed(iterable, function)
-# 8. When using the reversed() function, can it be applied to strings?
-#    A) Yes
-#    B) No
-# 9. Can the reversed() function be used to reverse a dictionary?
-#    A) Yes
-#    B) No
-# 0. In Python 3, what does the reversed() function return by default?
-#    A) A reversed object
-#    B) A list of reversed elements
-#    C) A tuple of reversed elements
-#    D) A set of reversed elements
-# 1. What is the purpose of the sorted() function in Python?
-#    A) To sort elements in an iterable and return a sorted list
-#    B) To reverse the order of elements in an iterable
-#     C) To remove elements from an iterable
-#     D) To concatenate elements in an iterable
+8. When using the filter() function, what happens if the filter function returns False for an element?
+    D) None of the above
 
-# 32. Which of the following is an iterable that can be passed to the sorted() function?
-#     A) Lists
-#     B) Strings
-#     C) Tuples
-#     D) All of the above
+9. Can the filter() function be used to filter elements based on multiple conditions?
+    A) Yes
+
+10. In Python 3, what does the filter() function return by default?
+    A) A filter object
+
+11. What is the purpose of the map() function in Python?
+    A) To apply a given function to each item in an iterable
+
+12. Which of the following is an iterable that can be passed to the map() function?
+    D) All of the above
+
+13. What does the map() function return?
+    A) A new iterable containing transformed elements
+
+14. What parameters does the map() function take?
+    D) A mapping function, followed by one or more iterables
+
+15. In the context of the map() function, what does the mapping function do?
+    A) Defines the transformation to be applied to each element
+
+16. Which of the following is true about the map() function?
+    A) The mapping function can return any data type
+
+17. What is the syntax for using the map() function in Python?
+    A) map(mapping_function, iterable)
+    C) map(function, iterable)   
+
+18. When using the map() function, what happens if the mapping function returns None for an element?
+    A) The element is removed from the iterable
+
+19. Can the map() function be used to transform elements from multiple iterables?
+    A) Yes
+
+20. In Python 3, what does the map() function return by default?
+    A) A map object
+
+21. What is the purpose of the reversed() function in Python?
+    A) To reverse the order of elements in an iterable
+
+22. Which of the following is an iterable that can be passed to the reversed() function?
+    D) All of the above
+
+23. What does the reversed() function return?
+    A) A new iterable containing reversed elements
+
+24. What parameter does the reversed() function take?
+    A) An iterable
+
+25. In the context of the reversed() function, what does "reversed elements" mean?
+    A) The elements are in the opposite order
+
+26. Which of the following is true about the reversed() function?
+    C) The reversed elements are returned as an iterator
+
+27. What is the syntax for using the reversed() function in Python?
+    A) reversed(iterable)
     
-# 33. What does the sorted() function return?
-#     A) A new iterable containing sorted elements
-#     B) The original iterable with sorted elements
-#     C) A list of sorted elements
-#     D) A tuple of sorted elements
+8. When using the reversed() function, can it be applied to strings?
+   A) Yes
+   
+9. Can the reversed() function be used to reverse a dictionary?
+   A) Yes
+   
+0. In Python 3, what does the reversed() function return by default?
+   A) A reversed object
+   
+1. What is the purpose of the sorted() function in Python?
+   A) To sort elements in an iterable and return a sorted list
 
-# 34. What parameters does the sorted() function take?
-#     A) An iterable
-#     B) A single element
-#     C) A mapping function
-#     D) A mapping function and an iterable
+32. Which of the following is an iterable that can be passed to the sorted() function?
+    D) All of the above
+    
+33. What does the sorted() function return?
+    C) A list of sorted elements
 
-# 35. In the context of the sorted() function, what does "sorted elements" mean?
-#     A) The elements are arranged in ascending order
-#     B) The elements are arranged in descending order
-#     C) The elements are multiplied
-#     D) The elements are concatenated
+34. What parameters does the sorted() function take?
+    A) An iterable
 
-# 36. Which of the following is true about the sorted() function?
-#     A) The sorted elements are returned as a tuple
-#     B) The sorted elements are returned as a set
-#     C) The sorted elements are returned as an iterator
-#     D) The sorted elements are returned as a list
+35. In the context of the sorted() function, what does "sorted elements" mean?
+    A) The elements are arranged in ascending order
 
-# 37. What is the syntax for using the sorted() function in Python?
-#     A) sorted(iterable)
-#     B) iterable.sorted()
-#     C) sorted(function, iterable)
-#     D) sorted(iterable, function)
+36. Which of the following is true about the sorted() function?
+    D) The sorted elements are returned as a list
 
-# 38. When using the sorted() function, can you specify a custom sorting order?
-#     A) Yes, by providing a custom sorting function
-#     B) No, the sorting order is always ascending
-#     C) Yes, by providing a reverse parameter
-#     D) No, the sorting order is always descending
+37. What is the syntax for using the sorted() function in Python?
+    D) sorted(iterable, function)
 
-# 39. Can the sorted() function be used to sort a dictionary based on its keys or values?
-#     A) Yes
-#     B) No
+38. When using the sorted() function, can you specify a custom sorting order?
+    A) Yes, by providing a custom sorting function
 
-# 40. In Python 3, what does the sorted() function return by default?
-#     A) A list of sorted elements
-#     B) A sorted object
-#     C) A tuple of sorted elements
-#     D) A set of sorted elements
+39. Can the sorted() function be used to sort a dictionary based on its keys or values?
+    A) Yes
+
+40. In Python 3, what does the sorted() function return by default?
+    A) A list of sorted elements
+    '''
+    
