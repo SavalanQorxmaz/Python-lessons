@@ -351,3 +351,5 @@ the function calculate_tax?
 output of the function calculate_discounted_price?
     a) (75.0, 25.0)
     '''
+lst = [1, 2, 3, 4, 5]
+print(sum(lst, 5))

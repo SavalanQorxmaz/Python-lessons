@@ -6,7 +6,7 @@ import re
 import lorem_text
 import lorem_text.lorem
 import random
-
+import h09_funcs
 logging.basicConfig(
     level=logging.NOTSET, 
     # filename="py_log.log",
@@ -810,4 +810,3 @@ info(sorted(string_list, key=find_second_letter))
 40. In Python 3, what does the sorted() function return by default?
     A) A list of sorted elements
     '''
-    

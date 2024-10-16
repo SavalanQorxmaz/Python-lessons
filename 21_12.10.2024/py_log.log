@@ -1,2 +1,6 @@
 2024-10-13 12:31:50,815 INFO 45.0
 2024-10-13 12:31:50,815 DEBUG 70.0
+map(function, iterables) The map() function executes a specified function for each item in an iterable. The item is sent to the function as a parameter.
+filter(function, iterable) The filter() function returns an iterator where the items are filtered through a function to test if the item is accepted or not.
+reversed(sequence) The reversed() function returns a reversed iterator object.
+sorted(iterable, key=key, reverse=reverse) The sorted() function returns a sorted list of the specified iterable object.
