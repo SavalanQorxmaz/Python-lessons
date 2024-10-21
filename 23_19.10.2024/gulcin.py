@@ -1,0 +1,1 @@
+from funcs import withdraw_money
