@@ -108,10 +108,10 @@ def f_get_book_index(objs):
 # Siyahidan  kitab silmek ucun funksiya
 def f_delete_book(index, objs): 
     objs.pop(index-1)
-    objs = '\n'.join([x.__str__() for x in objs])
+    f_show_books(objs)
+    objs = '\n'.join([x.__str__() for x in objs]) + '\n'
     with open('books.txt','w') as books:
         books.write(objs)
-    f_show_books(objs)
 
 
 def f_process():
@@ -131,10 +131,11 @@ def f_process():
         else:
             index = f_get_book_index(objs)
             if index == -1:
-                print('Index movcud deyil')
+                print('Indeks movcud deyil')
             elif index == 0:
                 print('Proses dayandirildi')
             else:
                 f_delete_book(index, objs)
-           
-f_process()
+
+if __name__ == '__main__':          
+    f_process()
