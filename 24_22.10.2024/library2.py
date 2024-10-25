@@ -1,8 +1,5 @@
-
-
-class Library:
-    def __init__(self) -> None:
-        pass
+import re
+import unittest
     
     
 class Book:
@@ -83,7 +80,7 @@ def f_show_books(objs):
         print('Siyahi bosdu')
     else:
         for i, obj in enumerate(objs, start=1): 
-            print(f'{i}: {obj} salam')
+            print(f'{i}: {obj}')
 
 # Kitab secmek ucun funksiya( hem silmek, hem redakte ucun istifade olunacag) index qaytaracaq
 
@@ -109,11 +106,26 @@ def f_get_book_index(objs):
 def f_delete_book(index, objs): 
     objs.pop(index-1)
     f_show_books(objs)
-    objs = '\n'.join([x.__str__() for x in objs]) + '\n'
+    if objs:
+        objs = '\n'.join([x.__str__() for x in objs]) + '\n'
+    else:
+        objs = ''
     with open('books.txt','w') as books:
         books.write(objs)
 
+# Axtarish funksiyasi
+def f_search(data):
+    objs = f_get_all_books()
+    # objs =  [obj.__str__() for obj in objs]
+    for obj in objs:
+        obj = obj.__str__()
+        search = re.search(data, obj)
+        if search:
+            span = search.span()
+            print(f'{obj[:span[0]]}{'\033[91m' + data + '\033[0m'}{obj[span[1]:]}')
 
+
+# Prosesi idare etmek ucun funksiya
 def f_process():
     objs = f_get_all_books()
     step = f_selected_step()
@@ -124,6 +136,9 @@ def f_process():
         with open('books.txt','a') as books:
             books.write(new_book + '\n')
             print('Kitab elave edildi')
+    elif step == '3':
+        data = input('Axtaris sozunu daxil et: ')
+        f_search(data)
             
     elif step == '4':
         if not objs:
@@ -137,5 +152,13 @@ def f_process():
             else:
                 f_delete_book(index, objs)
 
+    
+    
+class TestLibrary(unittest.TestCase):
+    def test_select_step(self):
+        pass
+        
+
 if __name__ == '__main__':          
     f_process()
+    # unittest.main(verbosity=2)
